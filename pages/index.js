@@ -5,6 +5,20 @@ const Index = () => {
   return (
     <div className={style.index}>
       <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-152603515-6"
+        ></script>
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-152603515-6');`,
+          }}
+        />
         <title>Flugelhorn | Web agency</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

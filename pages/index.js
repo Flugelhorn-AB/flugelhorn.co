@@ -1,4 +1,4 @@
-import style from "./styles/index.module.scss";
+import style from "./style/index.module.scss";
 import Head from "next/head";
 
 const Index = () => {

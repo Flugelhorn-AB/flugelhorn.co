@@ -1,0 +1,12 @@
+@import "../../base/index.scss";
+
+.blog {
+  .posts {
+    @include content;
+    display: flex;
+    justify-content: space-between;
+    .col {
+      width: 49.5%;
+    }
+  }
+}

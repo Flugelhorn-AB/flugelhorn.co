@@ -1,0 +1,33 @@
+@import "../../base/index.scss";
+
+.blogCard {
+  //   background-color: red;
+  display: flex;
+  margin: $mn/6 0 $mn 0;
+  border-top: 1px solid #ddd;
+  padding: $mn/3 0 0 0;
+  .imageContainer {
+    width: 14vw;
+    height: 14vw;
+    max-width: 196px;
+    max-height: 196px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .info {
+    padding-left: $mn/3;
+    .title {
+      font-size: 27px;
+      font-weight: 600;
+      width: 90%;
+    }
+    .details {
+      padding-top: $mn/2;
+      font-weight: 300;
+      color: #888;
+    }
+  }
+}

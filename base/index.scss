@@ -1,9 +1,24 @@
+@import './text.scss';
+@import './colors.scss';
+
 $mn: 60px;
 
 @mixin content {
-  max-width: 1400px;
-  margin: 0 auto;
-  @media screen and (max-width: 1440px) {
-    margin: 0 $mn/3;
-  }
+     max-width: 1400px;
+     margin: 0 auto;
+     @media screen and (max-width: 1440px) {
+          margin: 0 $mn/3;
+     }
+}
+
+@mixin maxWidthPadding {
+     padding-left: 15px;
+     padding-right: 15px;
+
+     @media screen and (max-width: 1500px) {
+     }
+     @media screen and (max-width: 1200px) {
+     }
+     @media screen and (max-width: 900px) {
+     }
 }

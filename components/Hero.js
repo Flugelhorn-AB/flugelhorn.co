@@ -4,9 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 const Hero = () => {
      const [offset, setOffset] = useState(0);
      const handleScroll = () => {
-          if (window.pageYOffset > 0) {
-               setOffset(window.pageYOffset);
-          }
+          setOffset(window.pageYOffset);
      };
 
      useEffect(() => {

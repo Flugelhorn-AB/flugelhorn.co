@@ -1,21 +1,21 @@
 import style from './style/navigation.module.scss';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-const Navigation = ({ setIsMenuOpen }) => {
+const Navigation = () => {
      const nav = useRef();
      const [menuExpanded, setMenuExpanded] = useState(false);
+     const [windowWidth, setWindowWidth] = useState();
 
-     const openMenu = () => {
-          if (menuExpanded) {
-               document.body.style.top = `-${window.scrollY}px`;
-               document.body.style.position = 'fixed';
-          } else {
-               const scrollY = document.body.style.top;
-               document.body.style.position = '';
-               document.body.style.top = scrollY;
-               window.scrollTo(0, parseInt(scrollY || '0') * -1);
-          }
-     };
+     if (typeof window !== 'undefined') {
+          useEffect(() => {
+               window.addEventListener('resize', () =>
+                    setWindowWidth(window.innerWidth)
+               );
+               if (windowWidth >= 600) {
+                    setMenuExpanded(false);
+               }
+          }, [windowWidth]);
+     }
 
      useEffect(() => {
           let lastScrollTop = 0;
@@ -45,7 +45,6 @@ const Navigation = ({ setIsMenuOpen }) => {
 
      const handleMenuExpanded = async () => {
           await setMenuExpanded(!menuExpanded);
-          await openMenu();
      };
 
      return (
@@ -55,9 +54,24 @@ const Navigation = ({ setIsMenuOpen }) => {
                ref={nav}
           >
                {' '}
-               <div className={style.logo}>
+               <div
+                    className={`${style.logo} ${
+                         menuExpanded ? style.logoColorChange : ''
+                    }`}
+               >
                     <Link href="#">
                          <a>Flugelhorn</a>
+                    </Link>
+               </div>
+               <div className={style.navigationContent}>
+                    <Link href="#">
+                         <a>Work</a>
+                    </Link>
+                    <Link href="#">
+                         <a>Blog</a>
+                    </Link>
+                    <Link href="#">
+                         <a>Contact</a>
                     </Link>
                </div>
                <a
@@ -75,7 +89,7 @@ const Navigation = ({ setIsMenuOpen }) => {
                     </div>
                </a>
                <div
-                    className={`${style.navigationContent} ${
+                    className={`${style.navigationContentMobile} ${
                          menuExpanded ? style.expanded : style.compressed
                     }`}
                >

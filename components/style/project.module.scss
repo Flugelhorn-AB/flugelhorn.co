@@ -28,23 +28,36 @@
 
     .tags {
       margin-top: $mn/5;
-      //  max-width: $mn * 4;
     }
 
     .intro {
       margin-top: $mn/4;
+      width: $mn * 4;
       @include textM;
+      @media screen and (min-width: 735px) {
+        width: $mn * 9;
+      }
+    }
+
+    .link {
+      @include textM;
+      display: block;
+      margin-top: $mn/4;
+      color: #00f;
+      text-decoration: underline;
     }
   }
 
   .textDark {
     .name {
-      color: #000;
+      color: $black101;
     }
     .tags {
+      color: $black101;
     }
 
     .intro {
+      color: $gray101;
     }
   }
 }

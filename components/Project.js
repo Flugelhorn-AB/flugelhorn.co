@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { url } from "../utils/fetcher";
 
 import style from "./style/project.module.scss";
 
 const Project = ({ details }) => {
-  const projectSize = "projectLarge";
+  console.log(details);
   return (
     <div className={`${style.project} ${style[details.projectSize]}`}>
       <div className={style.imageContainer}>
@@ -11,12 +12,15 @@ const Project = ({ details }) => {
       </div>
       <div
         className={`${style.info} ${
-          details.isColorWhite ? style.textWhite : style.textDark
+          details.isColorWhite === true ? style.textWhite : style.textDark
         }`}
       >
         <h2 className={style.name}>{details.name}</h2>
         <p className={style.tags}>{details.tags}</p>
         <p className={style.intro}>{details.intro}</p>
+        <Link href={`/${details.name}`}>
+          <a className={style.link}>Read more ↗</a>
+        </Link>
       </div>
     </div>
   );

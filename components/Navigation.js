@@ -5,6 +5,7 @@ const Navigation = () => {
      const nav = useRef();
      const [menuExpanded, setMenuExpanded] = useState(false);
      const [windowWidth, setWindowWidth] = useState();
+     const [isMobile, setIsMobile] = useState();
 
      if (typeof window !== 'undefined') {
           useEffect(() => {
@@ -13,6 +14,10 @@ const Navigation = () => {
                );
                if (windowWidth >= 600) {
                     setMenuExpanded(false);
+                    setIsMobile(false);
+               }
+               if (windowWidth < 600) {
+                    setIsMobile(true);
                }
           }, [windowWidth]);
      }
@@ -49,11 +54,12 @@ const Navigation = () => {
 
      return (
           <div
-               className={`${style.navigation} 
+               className={`${style.navigation} ${
+                    menuExpanded ? style.navigationExpanded : ''
+               }
                `}
                ref={nav}
           >
-               {' '}
                <div
                     className={`${style.logo} ${
                          menuExpanded ? style.logoColorChange : ''

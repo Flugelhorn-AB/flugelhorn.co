@@ -109,7 +109,7 @@
           opacity: 0;
           bottom: 0;
           //   background: rgba($black101, 1);
-          background: blue;
+          background: $black101;
           @media screen and (min-width: 600px) {
                a {
                     display: none;
@@ -122,12 +122,12 @@
           //   transform: translateX(0%);
 
           opacity: 1;
-          transition: opacity 200ms linear;
+          transition: opacity 300ms linear;
           position: absolute;
      }
      .compressed {
           //   transform: translateX(100%);
-          transition: opacity 200ms linear;
+          transition: opacity 300ms linear;
           position: absolute;
           a {
                display: none;

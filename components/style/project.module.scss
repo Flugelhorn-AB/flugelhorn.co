@@ -1,19 +1,74 @@
-@import '../../base/index.scss';
+@import "../../base/index.scss";
 
 .project {
-     display: flex;
-     position: relative;
-     border: 1px solid black;
+  display: flex;
+  position: relative;
+  //   border: 1px solid black;
+  justify-content: center;
+
+  .imageContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .info {
+    z-index: 1;
+    padding-top: $mn;
+    text-align: center;
+
+    .tags {
+      margin-top: $mn/5;
+      //  max-width: $mn * 4;
+    }
+
+    .intro {
+      margin-top: $mn/4;
+      @include textM;
+    }
+  }
+
+  .textDark {
+    .name {
+      color: #000;
+    }
+    .tags {
+    }
+
+    .intro {
+    }
+  }
 }
 
 .projectLarge {
-     width: 100%;
-     height: 730px;
-     margin-top: 20px;
+  width: 100%;
+  height: 730px;
+  .info {
+    .name {
+      @include headlineL;
+    }
+    .tags {
+      @include subHeadlineL;
+    }
+  }
 }
 .projectSmall {
-     width: 50%;
-     height: 730px;
-     margin: 0 20px;
-     margin-top: 20px;
+  width: 50%;
+  height: 730px;
+  margin: 0 20px;
+  //   margin-top: 20px;
+  .info {
+    .name {
+      @include headlineM;
+    }
+  }
 }

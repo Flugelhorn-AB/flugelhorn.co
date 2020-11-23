@@ -11,9 +11,8 @@
      top: 0;
      left: 0;
      //  background: $black101;
-     color: $black101;
+     color: $white101;
      margin: 0;
-     background: rgba($white101, 0.5);
 
      @media screen and (min-width: 600px) {
           display: flex;
@@ -44,7 +43,8 @@
                     width: 100%;
                     border-radius: 50px;
                     height: 3px;
-                    background: $black101;
+
+                    mix-blend-mode: difference;
                }
           }
 

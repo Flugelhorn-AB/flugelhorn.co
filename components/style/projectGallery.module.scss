@@ -1,10 +1,10 @@
-@import "../../base/index.scss";
+@import '../../base/index.scss';
 
 .projectGallery {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  // position: sticky;
-  background: white;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     // position: sticky;
+     background: white;
 }

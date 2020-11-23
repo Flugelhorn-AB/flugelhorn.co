@@ -64,7 +64,13 @@
 
 .projectLarge {
      width: 100%;
-     height: 730px;
+     height: 470px;
+     @media screen and (min-width: 600px) {
+          height: 530px;
+     }
+     @media screen and (min-width: 900px) {
+          height: 730px;
+     }
      .info {
           .name {
                @include headlineL;

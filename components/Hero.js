@@ -22,7 +22,7 @@ const Hero = () => {
                className={style.hero}
           >
                <div
-                    style={{ opacity: offset * 0.0014 }}
+                    style={{ opacity: offset * 0.001 }}
                     className={style.overlay}
                ></div>
           </div>

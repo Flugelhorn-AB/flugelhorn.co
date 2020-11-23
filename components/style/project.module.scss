@@ -5,7 +5,7 @@
   position: relative;
   //   border: 1px solid black;
   justify-content: center;
-
+  background: $white101;
   .imageContainer {
     position: absolute;
     width: 100%;
@@ -44,7 +44,6 @@
       display: block;
       margin-top: $mn/4;
       color: #00f;
-      //  text-decoration: underline;
     }
   }
 

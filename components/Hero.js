@@ -21,7 +21,7 @@ const Hero = () => {
                }}
                className={style.hero}
           >
-               <h1>Hero</h1>
+               <img src="/winter.png" />
 
                <div
                     style={{ opacity: offset * 0.001 }}

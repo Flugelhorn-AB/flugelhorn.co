@@ -8,7 +8,10 @@ const Project = ({ details }) => {
   return (
     <div className={`${style.project} ${style[details.projectSize]}`}>
       <div className={style.imageContainer}>
-        <img src={`${url}${details.cardImage.url}`} alt="" />
+        <img
+          src={details.cardImage.url}
+          alt={details.cardImage.alternativeText}
+        />
       </div>
       <div
         className={`${style.info} ${

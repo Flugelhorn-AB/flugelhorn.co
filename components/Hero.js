@@ -21,8 +21,6 @@ const Hero = () => {
                }}
                className={style.hero}
           >
-               <img src="/winter.png" />
-
                <div
                     style={{ opacity: offset * 0.001 }}
                     className={style.overlay}

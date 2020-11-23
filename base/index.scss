@@ -22,3 +22,14 @@ $mn: 60px;
      @media screen and (max-width: 900px) {
      }
 }
+
+@mixin mediaTablet {
+     @media screen and (min-width: 735px) {
+          @content;
+     }
+}
+@mixin mediaDesktop {
+     @media screen and (min-width: 1060px) {
+          @content;
+     }
+}

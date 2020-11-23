@@ -106,6 +106,7 @@
           top: 0;
           left: 0;
           right: 0;
+          visibility: hidden;
           opacity: 0;
           bottom: 0;
           //   background: rgba($black101, 1);
@@ -126,6 +127,7 @@
      .expanded {
           display: flex;
           padding: 0;
+          visibility: visible;
           //   transform: translateX(0%);
           a {
           }

@@ -1,16 +1,24 @@
+import Router from "next/router"
+import { useEffect } from "react"
 import { fetcher, url } from "../../utils/fetcher"
 import style from "./project.module.scss" 
 
-const Project = ({props}) => {
-
+const Project = ({details}) => {
+// const {project: {details}} = props
+useEffect(()=> {
+    Router.router.replace({pathname: details.name}, undefined,{ shallow: true})
+    },[])
+console.log(details)
   return (
     <div className={style.Project}>
-        <h2>
-            Hello
-        </h2>
+        <h2>{details.name} 
+
+</h2>
     </div>
   )
 }
+
+
 
 export async function getStaticPaths(){
     const res = await fetcher(`${url}/projects`)
@@ -24,7 +32,10 @@ export async function getStaticPaths(){
 
 
 export async function getStaticProps({params}){
-    return {props: {project: params.project}}
+    console.log(params)
+    const res = await fetcher(`${url}/projects/${params.project}`)
+
+    return {props:{ details: res}}
 }
 
 export default Project

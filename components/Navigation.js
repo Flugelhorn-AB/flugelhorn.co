@@ -91,7 +91,6 @@ const Navigation = () => {
                     <div className={style.span}>
                          <span />
                          <span />
-                         <span />{' '}
                     </div>
                </a>
                <div

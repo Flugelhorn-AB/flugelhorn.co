@@ -10,14 +10,15 @@
      justify-content: center;
      top: 0;
      left: 0;
-     //  background: $black101;
-     color: $white101;
+     //  background: rgba(40, 60, 73, 1);
+     background: rgba($white101, 1);
+     color: $black101;
      margin: 0;
 
      @media screen and (min-width: 600px) {
           display: flex;
-          height: 50px;
-          padding: 50px;
+
+          padding: 40px;
           flex-direction: row;
           position: fixed;
           justify-content: space-between;
@@ -43,8 +44,7 @@
                     width: 100%;
                     border-radius: 50px;
                     height: 3px;
-
-                    mix-blend-mode: difference;
+                    background: $black101;
                }
           }
 
@@ -117,6 +117,7 @@
                text-align: left;
           }
           @media screen and (min-width: 600px) {
+               display: none;
                a {
                     display: none;
                }
@@ -143,8 +144,8 @@
 
      .logo {
           a {
-               color: $black101;
                transition: color 150ms;
+               color: $black101;
                @include logoFont;
                font-size: 30px;
                position: absolute;
@@ -152,7 +153,7 @@
                top: 15px;
 
                @media screen and (min-width: 600px) {
-                    top: 30px;
+                    top: 25px;
                     left: 20px;
                }
                z-index: 100;

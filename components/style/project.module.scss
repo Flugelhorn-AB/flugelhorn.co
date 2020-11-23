@@ -1,96 +1,113 @@
-@import "../../base/index.scss";
+@import '../../base/index.scss';
 
 .project {
-  display: flex;
-  position: relative;
-  //   border: 1px solid black;
-  justify-content: center;
-  background: $white101;
-  //   flex-wrap: wrap;
-  .imageContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-  }
+     display: flex;
+     position: relative;
+     //   border: 1px solid black;
+     justify-content: center;
+     background: $white102;
+     //   flex-wrap: wrap;
+     .imageContainer {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               top: 0;
+               bottom: 0;
+               left: 0;
+               right: 0;
+          }
+     }
 
-  .info {
-    z-index: 1;
-    padding-top: $mn;
-    text-align: center;
+     .info {
+          z-index: 1;
+          padding-top: $mn;
+          text-align: center;
 
-    .tags {
-      margin-top: $mn/5;
-    }
+          .tags {
+               margin-top: $mn/5;
+          }
 
-    .intro {
-      margin-top: $mn/4;
-      width: $mn * 4;
-      @include textM;
-      @media screen and (min-width: 735px) {
-        width: $mn * 9;
-      }
-    }
+          .intro {
+               margin-top: $mn/4;
+               width: 100%;
+               padding: 0 10px;
+               @include textM;
+               @media screen and (min-width: 735px) {
+                    width: $mn * 9;
+               }
+          }
 
-    .link {
-      @include textM;
-      display: block;
-      margin-top: $mn/4;
-      color: #00f;
-    }
-  }
+          .link {
+               @include textM;
+               display: block;
+               margin-top: $mn/4;
+               color: #00f;
+          }
+     }
 
-  .textDark {
-    .name {
-      color: $black101;
-    }
-    .tags {
-      color: $black101;
-    }
+     .textDark {
+          .name {
+               color: $black101;
+          }
+          .tags {
+               color: $black101;
+          }
 
-    .intro {
-      color: $gray101;
-    }
-  }
+          .intro {
+               color: $gray101;
+          }
+     }
 }
 
 .projectLarge {
-  width: 100%;
-  height: 470px;
-  @media screen and (min-width: 600px) {
-    height: 530px;
-  }
-  @media screen and (min-width: 900px) {
-    height: 730px;
-  }
-  .info {
-    .name {
-      @include headlineL;
-    }
-    .tags {
-      @include subHeadlineL;
-    }
-  }
+     //  height: 470px;
+     grid-row: span 4;
+     grid-column: span 2;
+     @include mediaTablet {
+          grid-row: span 5;
+          width: 100vw;
+          margin-left: -10px;
+     }
+     @include mediaDesktop {
+          grid-row: span 6;
+     }
+     .info {
+          .intro {
+          }
+          .name {
+               @include headlineL;
+          }
+          .tags {
+               @include subHeadlineL;
+          }
+     }
 }
 .projectSmal {
-  width: 50%;
-  height: 730px;
-  margin: 0 20px;
-  //   margin-top: 20px;
-  .info {
-    .name {
-      @include headlineM;
-    }
-    .tags {
-      @include subHeadlineM;
-    }
-  }
+     width: 100%;
+
+     margin: 0px 0px;
+
+     grid-row: span 3;
+     grid-column: span 2;
+     //   margin-top: 20px;
+     @include mediaTablet {
+          grid-row: span 4;
+          grid-column: span 1;
+     }
+     @include mediaDesktop {
+          grid-row: span 5;
+          grid-column: span 1;
+     }
+     .info {
+          .name {
+               @include headlineM;
+          }
+          .tags {
+               @include subHeadlineM;
+          }
+     }
 }

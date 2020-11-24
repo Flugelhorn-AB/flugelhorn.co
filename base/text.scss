@@ -1,51 +1,51 @@
 @mixin logoFont {
-  font-family: "retiro-std-48pt", sans-serif;
+     font-family: 'retiro-std-48pt';
 }
 
 @mixin textM {
-  font-size: 14px;
-  font-weight: 300;
+     font-size: 14px;
+     font-weight: 300;
 
-  @media screen and (min-width: 735px) {
-    font-size: 17px;
-  }
+     @media screen and (min-width: 735px) {
+          font-size: 17px;
+     }
 }
 @mixin headlineM {
-  font-size: 32px;
-  font-weight: 600;
+     font-size: 32px;
+     font-weight: 600;
 
-  @media screen and (min-width: 1069px) {
-    font-size: 40px;
-  }
+     @media screen and (min-width: 1069px) {
+          font-size: 40px;
+     }
 }
 
 @mixin headlineL {
-  font-size: 32px;
-  font-weight: 600;
+     font-size: 32px;
+     font-weight: 600;
 
-  @media screen and (min-width: 735px) {
-    font-size: 48px;
-  }
-  @media screen and (min-width: 1069px) {
-    font-size: 56px;
-  }
+     @media screen and (min-width: 735px) {
+          font-size: 48px;
+     }
+     @media screen and (min-width: 1069px) {
+          font-size: 56px;
+     }
 }
 @mixin subHeadlineM {
-  font-size: 19px;
-  font-weight: 400;
+     font-size: 19px;
+     font-weight: 400;
 
-  @media screen and (min-width: 1069px) {
-    font-size: 21px;
-  }
+     @media screen and (min-width: 1069px) {
+          font-size: 21px;
+     }
 }
 @mixin subHeadlineL {
-  font-size: 19px;
-  font-weight: 400;
+     font-size: 19px;
+     font-weight: 400;
 
-  @media screen and (min-width: 735px) {
-    font-size: 24px;
-  }
-  @media screen and (min-width: 1069px) {
-    font-size: 28px;
-  }
+     @media screen and (min-width: 735px) {
+          font-size: 24px;
+     }
+     @media screen and (min-width: 1069px) {
+          font-size: 28px;
+     }
 }

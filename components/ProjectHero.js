@@ -1,8 +1,8 @@
-import style from './style/hero.module.scss';
+import style from './style/projectHero.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
-const Hero = () => {
-     const [offset, setOffset] = useState(0);
+const ProjectHero = ({img}) => {
+     const [offset, setOffset] = useState();
      const handleScroll = () => {
           setOffset(window.pageYOffset);
      };
@@ -19,10 +19,10 @@ const Hero = () => {
                style={{
                     top: `${offset * 0.6}px`,
                }}
-               className={style.hero}
+               className={style.projectHero}
           >
 
-
+               {img ? <img src={img} /> : ''}
                <div
                     style={{ opacity: offset * 0.001 }}
                     className={style.overlay}
@@ -31,4 +31,4 @@ const Hero = () => {
      );
 };
 
-export default Hero;
+export default ProjectHero;

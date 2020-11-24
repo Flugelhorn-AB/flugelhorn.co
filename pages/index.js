@@ -21,7 +21,7 @@ const Index = (props) => {
 
 export const getStaticProps = async () => {
   const projects = await fetcher(
-    `https://afternoon-scrubland-19654.herokuapp.com/projects`
+    `http://localhost:1337/projects`
   );
   console.log(projects);
   return { props: { projects } };

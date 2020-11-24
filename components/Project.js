@@ -9,7 +9,7 @@ const Project = ({ details }) => {
     <div className={`${style.project} ${style[details.projectSize]}`}>
       <div className={style.imageContainer}>
         <img
-          src={details.cardImage.url}
+          src={`http://localhost:1337${details.cardImage.url}`}
           alt={details.cardImage.alternativeText}
         />
       </div>

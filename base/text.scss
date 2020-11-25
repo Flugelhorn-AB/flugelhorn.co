@@ -1,5 +1,14 @@
 @mixin logoFont {
-  font-family: "retiro-std-48pt", sans-serif;
+  font-family: "retiro-std-48pt", sans-serif !important;
+}
+
+@mixin textArticleParagraph {
+  font-size: 17px;
+  font-weight: 300;
+  color: #292929;
+  @media screen and (min-width: 735px) {
+    font-size: 21px;
+  }
 }
 
 @mixin textM {
@@ -10,6 +19,7 @@
     font-size: 17px;
   }
 }
+
 @mixin headlineM {
   font-size: 32px;
   font-weight: 600;

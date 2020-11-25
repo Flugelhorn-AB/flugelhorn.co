@@ -6,11 +6,11 @@ const BlogGallery = ({ articles }) => {
     <div className={style.blogGallery}>
       <div className={style.intro}>
         <h1 className={style.title}>Latest blog posts</h1>
-        <div className={style.categories}>
+        {/* <div className={style.categories}>
           <p>Code</p>
           <p>Design</p>
           <p>travel</p>
-        </div>
+        </div> */}
       </div>
       <div className={style.posts}>
         {articles.map((article) => {

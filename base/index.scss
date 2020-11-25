@@ -1,35 +1,35 @@
-@import './text.scss';
-@import './colors.scss';
+@import "./text.scss";
+@import "./colors.scss";
 
 $mn: 60px;
 
 @mixin content {
-     max-width: 1400px;
-     margin: 0 auto;
-     @media screen and (max-width: 1440px) {
-          margin: 0 $mn/3;
-     }
+  max-width: 1600px;
+  margin: 0 auto;
+  @media screen and (max-width: 1640px) {
+    margin: 0 $mn/3;
+  }
 }
 
 @mixin maxWidthPadding {
-     padding-left: 15px;
-     padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 
-     @media screen and (max-width: 1500px) {
-     }
-     @media screen and (max-width: 1200px) {
-     }
-     @media screen and (max-width: 900px) {
-     }
+  @media screen and (max-width: 1500px) {
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 900px) {
+  }
 }
 
 @mixin mediaTablet {
-     @media screen and (min-width: 735px) {
-          @content;
-     }
+  @media screen and (min-width: 735px) {
+    @content;
+  }
 }
 @mixin mediaDesktop {
-     @media screen and (min-width: 1060px) {
-          @content;
-     }
+  @media screen and (min-width: 1060px) {
+    @content;
+  }
 }

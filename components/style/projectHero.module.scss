@@ -1,13 +1,13 @@
 @import '../../base/index.scss';
 
-.hero {
+.projectHero {
      width: 100%;
-     height: 100vh;
+     height: 55vh;
      @include mediaTablet {
-          height: 70vh;
+          height: 65vh;
      }
      @include mediaDesktop {
-          height: 100vh;
+          height: 65vh;
      }
      display: flex;
      background: black;
@@ -24,7 +24,9 @@
      img {
           width: 100%;
           height: 100%;
+
           object-fit: cover;
+          position: absolute;
      }
      h1 {
           @include logoFont;

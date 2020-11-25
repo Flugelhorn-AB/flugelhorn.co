@@ -1,197 +1,210 @@
-@import "../../base/index.scss";
+@import '../../base/index.scss';
 
 .navigation {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  align-items: center;
-  z-index: 200;
-  top: 0;
-  left: 0;
-  //  background: rgba(40, 60, 73, 1);
-  background: rgba($white101, 1);
-  color: $black101;
-  margin: 0 auto;
+     width: 100%;
+     height: 60px;
+     position: fixed;
+     align-items: center;
+     z-index: 200;
+     top: 0;
+     left: 0;
+     //  background: rgba(40, 60, 73, 1);
+     background: rgba($white101, 0.6);
+     color: $black101;
+     margin: 0 auto;
+     backdrop-filter: blur(15px);
+     .navigationContainer {
+          justify-content: space-between;
+          display: flex;
 
-  .navigationContainer {
-    justify-content: space-between;
-    display: flex;
+          @include content;
+          width: 100%;
+     }
 
-    @include content;
-    width: 100%;
-  }
+     .menuButton {
+          display: flex;
+          position: absolute;
+          right: 20px;
+          top: 30px;
+          transform: translateY(-50%);
+          z-index: 2000;
+          border: none;
+          background: none;
+          height: 10px;
+          width: 30px;
 
-  .menuButton {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 30px;
-    transform: translateY(-50%);
-    z-index: 2000;
-    border: none;
-    background: none;
-    height: 10px;
-    width: 45px;
-    .span {
-      flex-direction: column;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: space-between;
-      span {
-        width: 100%;
-        border-radius: 50px;
-        height: 3px;
-        background: $black101;
-      }
-    }
+          .span {
+               flex-direction: column;
+               display: flex;
+               width: 100%;
+               height: 100%;
+               justify-content: space-between;
+               span {
+                    width: 100%;
+                    border-radius: 100px;
+                    height: 3px;
+                    background: $black101;
+               }
+          }
 
-    @media screen and (min-width: 600px) {
-      display: none;
-    }
-  }
+          @media screen and (min-width: 600px) {
+               display: none;
+          }
+     }
 
-  .buttonCompressed {
-    transition: transform 0.25s;
+     .buttonCompressed {
+          transition: transform 0.25s;
 
-    .span {
-      span {
-        transition: transform 250ms;
-      }
-    }
-  }
+          .span {
+               span {
+                    transition: transform 250ms;
+               }
+          }
+     }
 
-  .buttonExpanded {
-    .span {
-      span {
-        background: red;
-        transition: transform 250ms;
-        &:nth-child(1) {
-          transform: translateY(3.5px) rotate(45deg);
-        }
-        &:nth-child(2) {
-          transform: translateY(-3.5px) rotate(-45deg);
-        }
-        // &:nth-child(3) {
-        //      transform: translateY(-8px) rotate(-45deg);
-        // }
-      }
-    }
-  }
+     .buttonExpanded {
+          .span {
+               span {
+                    background: red;
+                    transition: transform 250ms;
+                    &:nth-child(1) {
+                         transform: translateY(3.5px) rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                         transform: translateY(-3.5px) rotate(-45deg);
+                    }
+                    // &:nth-child(3) {
+                    //      transform: translateY(-8px) rotate(-45deg);
+                    // }
+               }
+          }
+     }
 
-  .navigationContent {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    display: none;
+     .navigationContent {
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          display: none;
 
-    a {
-      z-index: 100;
-    }
-    @media screen and (min-width: 600px) {
-      display: flex;
+          a {
+               z-index: 100;
+               font-weight: 400;
+               font-size: 20px;
+               color: $black103;
+               &:hover {
+                    color: $black104;
+               }
+          }
+          @media screen and (min-width: 600px) {
+               display: flex;
 
-      a {
-        padding-left: 20px;
-      }
-    }
-  }
+               a {
+                    padding-left: 20px;
+               }
+          }
+     }
 
-  .navigationContentMobile {
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
-    bottom: 0;
-    //   background: rgba($black101, 1);
-    color: $black101;
-    background: $white101;
-    a {
-      padding: 20px;
-      font-size: 30px;
-      text-align: left;
-    }
-    @media screen and (min-width: 600px) {
-      display: none;
-      a {
-        display: none;
-      }
-    }
-  }
-  .expanded {
-    display: flex;
-    padding: 0;
-    visibility: visible;
-    //   transform: translateX(0%);
-    a {
-    }
-    opacity: 1;
-    transition: opacity 300ms linear;
-    position: absolute;
-  }
-  .compressed {
-    //   transform: translateX(100%);
-    transition: opacity 300ms linear;
-    position: absolute;
-    a {
-      display: none;
-    }
-  }
+     .navigationContentMobile {
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          visibility: hidden;
+          opacity: 0;
+          bottom: 0;
+          //   background: rgba($black101, 1);
+          color: $black101;
+          background: $white101;
+          a {
+               padding: 20px;
+               font-size: 30px;
+               text-align: left;
+               // transition: color 50ms linear;
+               &:hover {
+                    // color: red;
+                    // transition: color 100ms linear;
+               }
+          }
+          @media screen and (min-width: 600px) {
+               display: none;
+               a {
+                    display: none;
+               }
+          }
+     }
+     .expanded {
+          display: flex;
+          padding: 0;
+          visibility: visible;
+          //   transform: translateX(0%);
+          a {
+          }
+          opacity: 1;
+          transition: opacity 300ms linear;
+          position: absolute;
+     }
+     .compressed {
+          //   transform: translateX(100%);
+          transition: opacity 300ms linear;
+          position: absolute;
+          a {
+               display: none;
+          }
+     }
 
-  .logo {
-    a {
-      transition: color 150ms;
-      color: $black101;
-      @include logoFont;
-      font-size: 30px;
-      // position: absolute;
-      left: 5px;
-      top: 15px;
-      display: block;
+     .logo {
+          a {
+               transition: color 150ms;
+               color: $black103;
+               @include logoFont;
+               font-size: 30px;
+               // position: absolute;
+               left: 5px;
+               top: 15px;
+               display: block;
 
-      position: relative;
-      @media screen and (min-width: 600px) {
-        left: unset;
-        top: unset;
-        @include logoFont;
-      }
-      z-index: 100;
-    }
-  }
-  .logoColorChange {
-    a {
-      transition: color 150ms;
-    }
-  }
+               position: relative;
+               @media screen and (min-width: 600px) {
+                    left: unset;
+                    top: unset;
+                    @include logoFont;
+                    font-size: 40px;
+               }
+               z-index: 100;
+          }
+     }
+     .logoColorChange {
+          a {
+               transition: color 150ms;
+          }
+     }
 
-  a {
-    // padding-left: 20px;
-  }
-  @media screen and (min-width: 600px) {
-    display: flex;
+     a {
+          // padding-left: 20px;
+     }
+     @media screen and (min-width: 600px) {
+          display: flex;
 
-    padding: 40px;
-    flex-direction: row;
-    position: fixed;
-    justify-content: flex-end;
-  }
+          padding: 40px;
+          flex-direction: row;
+          position: fixed;
+          justify-content: flex-end;
+     }
 }
 
 .hideNav {
-  transition: transform 0.5s;
-  transform: translateY(-100px);
+     transition: transform 0.5s;
+     transform: translateY(-100px);
 }
 .showNav {
-  transition: transform 0.5s;
-  transform: translateY(0px);
+     transition: transform 0.5s;
+     transform: translateY(0px);
 }
 
 .navigationExpanded {
-  transform: none;
+     transform: none;
 }

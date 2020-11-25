@@ -10,6 +10,13 @@ $mn: 60px;
     margin: 0 $mn/3;
   }
 }
+@mixin articleContent {
+  max-width: 680px;
+  margin: 0 auto;
+  @media screen and (max-width: 710px) {
+    margin: 0 $mn/4;
+  }
+}
 
 @mixin maxWidthPadding {
   padding-left: 15px;

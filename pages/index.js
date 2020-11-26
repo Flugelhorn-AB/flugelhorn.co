@@ -8,13 +8,14 @@ import ProjectGallery from "../components/ProjectGallery";
 import style from "./style/index.module.scss";
 
 const Index = (props) => {
+
   const index = useRef();
   return (
     <div ref={index} className={`${style.index} `}>
       <Head />
-      <Navigation />
+      <Navigation  />
       <Hero indexRef={index} />
-      <ProjectGallery projects={props.projects} />
+      <ProjectGallery  projects={props.projects} />
     </div>
   );
 };

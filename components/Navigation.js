@@ -7,6 +7,8 @@ const Navigation = () => {
   const [windowWidth, setWindowWidth] = useState();
   const [isMobile, setIsMobile] = useState();
 
+
+
   if (typeof window !== "undefined") {
     useEffect(() => {
       window.addEventListener("resize", () =>
@@ -43,6 +45,16 @@ const Navigation = () => {
     );
   }, []);
 
+
+  const handleWorkClick = () => {
+          // const projectSection = document.querySelector('.projectGallery_projectGallery__3YC0g')
+          // projectSection.scrollIntoView({behaviour: 'smooth'})
+     }
+
+
+
+
+
   const handleMenuExpanded = async () => {
     await setMenuExpanded(!menuExpanded);
   };
@@ -61,7 +73,7 @@ const Navigation = () => {
         </div>
         <div className={style.navigationContent}>
           <Link href="#">
-            <a>Work</a>
+            <a onClick={handleWorkClick}>Work</a>
           </Link>
           <Link href="/blog">
             <a>Blog</a>

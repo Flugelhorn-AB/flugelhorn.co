@@ -20,7 +20,7 @@ const Project = ({ details }) => {
       >
         <h2 className={style.name}>{details.name}</h2>
         <p className={style.tags}>{details.tags}</p>
-        <p className={style.intro}>{details.intro}</p>
+        {/* <p className={style.intro}>{details.intro}</p> */}
         <Link href={`/work/${details.name}`}>
           <a className={style.link}>Read more ↗</a>
         </Link>

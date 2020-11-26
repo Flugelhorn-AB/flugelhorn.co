@@ -27,7 +27,6 @@ const coverImg = details.cardImage.url;
             <h2 className={style.tags}>{details.tags}</h2>
             <h2 className={style.intro}>{details.intro}</h2>
 
-
             {details.introImage.url ? 
             <Link href={details.link}>
                 <a>

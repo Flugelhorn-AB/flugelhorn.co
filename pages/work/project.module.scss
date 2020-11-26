@@ -49,6 +49,7 @@
                     margin-top: $mn/4;
                     width: 100%;
                     padding: 0 20px;
+
                     @include textM;
                     @include mediaTablet {
                          width: 100%;

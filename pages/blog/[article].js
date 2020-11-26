@@ -77,7 +77,7 @@ const Article = ({ article }) => {
             </a>
           </div>
           <div className={style.imageContainer}>
-            <img src={`${url}${article.cardPicture.url}`} alt="" />
+            <img src={`${article.cardPicture.url}`} alt="" />
           </div>
         </div>
         <div

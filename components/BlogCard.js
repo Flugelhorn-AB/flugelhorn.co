@@ -13,10 +13,7 @@ const BlogCard = ({ details }) => {
       <a className={style.link}>
         <div className={style.blogCard}>
           <div className={style.imageContainer}>
-            <img
-              src={`${url}${details.cardPicture.formats.medium.url}`}
-              alt=""
-            />
+            <img src={`${details.cardPicture.formats.medium.url}`} alt="" />
           </div>
           <div className={style.info}>
             <h1 className={style.title}>{details.title} ↗</h1>

@@ -21,7 +21,7 @@ const Index = (props) => {
 
 export const getStaticProps = async () => {
   const projects = await fetcher(
-    `http://localhost:1337/projects`
+    `${url}/projects`
   );
   console.log(projects);
   return { props: { projects } };

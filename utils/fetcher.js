@@ -4,4 +4,4 @@ export const fetcher = (urlToFetch) => {
   return fetch(urlToFetch).then((r) => r.json());
 };
 
-export const url = "http://localhost:1337";
+export const url = "https://afternoon-scrubland-19654.herokuapp.com";

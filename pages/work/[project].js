@@ -10,39 +10,46 @@ const Project = ({ details }) => {
   // const {project: {details}} = props
 
   console.log(details);
-const coverImg = `http://localhost:1337${details.cardImage.url}`;
+const coverImg = details.cardImage.url;
+
   return (
+
+
     <div className={style.projectContainer}>
-<Navigation />
+        
+        <Navigation />
+        
         <ProjectHero img={coverImg} />
-<div className={style.project}>
 
+        <div className={style.project}>
         <div className={style.details}>
-      <h2 className={style.name}>{details.name}</h2>
-      <h2 className={style.tags}>{details.tags}</h2>
-      <h2 className={style.intro}>{details.intro}</h2>
+            <h2 className={style.name}>{details.name}</h2>
+            <h2 className={style.tags}>{details.tags}</h2>
+            <h2 className={style.intro}>{details.intro}</h2>
 
-  
 
+            {details.introImage.url ? 
+            <Link href={details.link}>
+                <a>
+                    <img className={style.introImage} src={details.introImage.url} />
+                </a>
+            </Link>
+
+: ''}
       <Link href={details.link}>
       <a  className={style.link}>View ↗</a>
       </Link>
 
 
-      <div className={style.techStack}>
-      {details.techStack.map(technology => {
+      <div className={style.stack}>
+      {details.stack.map(technology => {
           return <p>{technology.technology}</p>
       })}
 </div>
       </div>
 
 
-        {/* <div className={style.fullImage}> */}
-        {/* <video  autoPlay muted loop> 
-        <source src={`http://localhost:1337${details.fullImage1[0].url}`} type="video/mp4" />
-        </video> */}
-        {/* </div> */}
-        
+      
 <div className={style.descriptionContainer}>
         <div className={style.description}>
             <h1>About</h1>
@@ -50,55 +57,23 @@ const coverImg = `http://localhost:1337${details.cardImage.url}`;
       </div></div>
 
 
-      {details.fullImage1[0].url ?
-      <div className={style.fullImage}>
-      <img src={`http://localhost:1337${details.fullImage1[0].url}`} />
-        </div>
-        : '' }
 
-
-{/* {details.imageRow[0].leftImg.ext === '.mov' ?
-
-<div className={style.leftImage}>
-<video  autoPlay muted loop> 
-        <source src={`http://localhost:1337${details.imageRow[0].leftImg.url}`} type="video/mp4" />
-        </video> 
-        </div>
-        :
-
-<div className={style.leftImage}>
-        <img src={`http://localhost:1337${details.imageRow[0].leftImg.url}`} />
-        </div>
-        }
-
-
-        {details.imageRow[0].rightImg.url ?
-        <div className={style.rightImage}>
-        <img src={`http://localhost:1337${details.imageRow[0].rightImg.url}`} />
-        </div>  : ''}
-    
-        
-         */}
  
 
-
-      {details.fullImage2.url ?
-      <div className={style.fullImage}>
-      <img src={`http://localhost:1337${details.fullImage2[0].url}`} />
-        </div>
-        : '' }
-
+      <div className={style.processContainer}> 
+          <h1>Project Overview</h1>
       <div className={style.process}>
       {details.stepProcess.map(step => {
-          return <div key={step.id} className={style.step}>{step.id}{step.step}</div>
+          return <div key={step.id} className={style.step}><p>{step.id}. {step.step}</p></div>
       })}
-      </div>
+      </div></div>
 
 
 
 
     </div>
     </div>
+
 
   );
 };

@@ -24,6 +24,9 @@
         @include textArticleParagraph;
         padding-bottom: $mn/6;
         text-align: justify;
+        &::selection {
+          background: #9bebde;
+        }
       }
       .quote,
       i {
@@ -40,6 +43,17 @@
         img {
           width: 100%;
           height: auto;
+        }
+      }
+      a {
+        color: $blue101;
+        display: inline-block;
+        position: relative;
+        transition-duration: 100ms;
+        &:hover {
+          transition-duration: 100ms;
+          //   transform: rotateY(360deg);
+          transform: rotateZ(-6deg) scale(1.05);
         }
       }
     }

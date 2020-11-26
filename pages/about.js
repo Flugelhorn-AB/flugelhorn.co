@@ -13,16 +13,15 @@ const About = () => {
       <ProjectHero img="/flugel-fam.png" />
       <AboutBlock title="The Flugel Fam">
         <p>
-          Flugelhorn is a digital web agency founded by the deadly duo, Ninja
-          Labor and Wizard Erixon.
+          Flugelhorn /ˈflo͞oɡəlˌhôrn/ is a digital web agency founded by the
+          deadly duo, Ninja Labor and Wizard Erixon.
         </p>
         <p>
-          The agency is schooled the{" "}
+          The founders are schooled through the guiding principles of{" "}
           <a target="_blank" href="https://hyperisland.com">
             Hyper Island
-          </a>{" "}
-          way.
-          <p></p>
+          </a>
+          . <p></p>
           <i>
             "We immerse future talents and industry professionals in
             transformative learning experiences to help them to adapt to rapidly
@@ -30,14 +29,7 @@ const About = () => {
           </i>
         </p>
 
-        <p>
-          Our structure is unique. We are the only major design studio where the
-          owners of the business are the creators of the work and serve as the
-          primary contact for every client. This reflects our conviction that
-          great design cannot happen without passion, intelligence and — above
-          all — personal commitment, and is demonstrated by a portfolio that
-          spans five decades, many industries, and clients of every size.
-        </p>
+        <p>The ™ maxim "Lead the Change" is present in everything we do.</p>
       </AboutBlock>
       <AboutBlock title="What we do">
         <p>

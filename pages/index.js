@@ -15,7 +15,9 @@ const Index = (props) => {
       <Head />
       <Navigation  />
       <Hero indexRef={index} />
+      <section id="work">    
       <ProjectGallery  projects={props.projects} />
+      </section>
     </div>
   );
 };

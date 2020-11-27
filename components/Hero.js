@@ -17,7 +17,7 @@ const Hero = () => {
      return (
           <div
                style={{
-                    top: `${offset * 0.6}px`,
+                    transform: `translateY(-${offset * 0.6}px)`,
                }}
                className={style.hero}
           >

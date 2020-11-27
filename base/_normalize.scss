@@ -3,7 +3,7 @@
 
 html,
 body {
-     overflow-x: hidden;
+     //  overflow-x: hidden;
      min-height: 100vh;
      margin: 0;
      padding: 0;
@@ -58,6 +58,7 @@ li {
 }
 a {
      color: inherit;
+     cursor: pointer;
 }
 
 input,

@@ -1,0 +1,66 @@
+@import "../../base/index.scss";
+.aboutBlock {
+  background-color: $white101;
+  padding: $mn/2 0;
+  z-index: 10;
+  position: relative;
+  .content {
+    display: flex;
+    flex-direction: column;
+    @include content;
+
+    .title,
+    .children {
+      width: 100%;
+    }
+
+    .title {
+      @include headlineL;
+      padding-bottom: $mn/6;
+    }
+
+    .children {
+      p {
+        @include textArticleParagraph;
+        padding-bottom: $mn/6;
+        text-align: justify;
+      }
+      .quote,
+      i {
+        display: block;
+        font-style: italic;
+        padding-left: $mn;
+        text-align: start;
+      }
+
+      div {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @include mediaTablet {
+    padding-top: $mn;
+    .content {
+      flex-direction: row;
+
+      .title,
+      .children {
+        width: 50%;
+      }
+
+      .children {
+        p {
+          padding-top: 7px;
+          padding-bottom: $mn/4;
+        }
+      }
+    }
+  }
+}

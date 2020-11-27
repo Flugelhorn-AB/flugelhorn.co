@@ -13,13 +13,18 @@ const About = () => {
       <ProjectHero img="/flugel-fam.png" />
       <AboutBlock title="The Flugel Fam">
         <p>
-          Flugelhorn /ˈflo͞oɡəlˌhôrn/ is a digital web agency founded by the
-          deadly duo, Ninja Labor and Wizard Erixon.
+          Flugelhorn <span className={style.pronounce}>/ˈflo͞oɡəlˌhôrn/</span> is
+          a design oriented digital web agency founded by the deadly duo, Ninja
+          Labor and Wizard Erixon.
         </p>
         <p>
           The founders are schooled through the guiding principles of{" "}
-          <a target="_blank" href="https://hyperisland.com">
-            Hyper Island
+          <a
+            target="_blank"
+            href="https://hyperisland.com"
+            className={style.hyperHover}
+          >
+            Hyper Island ↗
           </a>
           . <p></p>
           <i>
@@ -29,27 +34,36 @@ const About = () => {
           </i>
         </p>
 
-        <p>The ™ maxim "Lead the Change" is present in everything we do.</p>
+        <p>
+          The ™ maxim "Lead the Change" is present in everything we do. We
+          analyze the current world situation and trends to build things that
+          facilitates the lives of others.
+        </p>
       </AboutBlock>
       <AboutBlock title="What we do">
         <p>
-          Pentagram is a multi-disciplinary, independently-owned design studio.
+          We design and develop mesmerizing digital products for companies and
+          organizations. Always responsive, always search engine optimized,
+          always stunning.
         </p>
         <p>
-          Our work encompasses graphics and identity, products and packaging,
-          exhibitions and installations, websites and digital experiences,
-          advertising and communications, sound and motion. Our 24 partners are
-          all practicing designers, and whether working collaboratively or
-          independently, they do so in friendship.
+          We have the capacity to create everything between business websites to
+          complex full blown web apps. Whether you need a website for your
+          restaurant with a changeable menu or an online event with login and
+          live chat, we can do it.
         </p>
-        <p>
-          Our structure is unique. We are the only major design studio where the
-          owners of the business are the creators of the work and serve as the
-          primary contact for every client. This reflects our conviction that
-          great design cannot happen without passion, intelligence and — above
-          all — personal commitment, and is demonstrated by a portfolio that
-          spans five decades, many industries, and clients of every size.
-        </p>
+        <p>Our current tech stack:</p>
+        <ul>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Firebase</li>
+          <li>Strapi</li>
+          <li>Gatsby</li>
+          <li>Express</li>
+          <li>Wordpress</li>
+          <li>Electron</li>
+        </ul>
+        <p>To be continued.</p>
       </AboutBlock>
       <AboutBlock title="Our Office">
         <p>

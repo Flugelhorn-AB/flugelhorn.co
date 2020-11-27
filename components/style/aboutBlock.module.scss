@@ -23,17 +23,12 @@
       p {
         @include textArticleParagraph;
         padding-bottom: $mn/6;
-        text-align: justify;
-        &::selection {
-          background: #9bebde;
-        }
       }
       .quote,
       i {
         display: block;
         font-style: italic;
         padding-left: $mn;
-        text-align: start;
       }
 
       div {
@@ -46,14 +41,29 @@
         }
       }
       a {
-        color: $blue101;
         display: inline-block;
         position: relative;
         transition-duration: 100ms;
         &:hover {
           transition-duration: 100ms;
-          //   transform: rotateY(360deg);
-          transform: rotateZ(-6deg) scale(1.05);
+          color: $blue101;
+          transform: rotateZ(-1deg) scale(1.02);
+          text-decoration: underline;
+        }
+        p {
+          transition-duration: 100ms;
+          &:hover {
+            transition-duration: 100ms;
+            color: $blue101;
+          }
+        }
+      }
+
+      ul {
+        padding-left: $mn;
+        padding-bottom: $mn/3;
+        li {
+          @include textArticleParagraph;
         }
       }
     }
@@ -73,6 +83,10 @@
         p {
           padding-top: 7px;
           padding-bottom: $mn/4;
+          text-align: justify;
+        }
+        i {
+          text-align: start;
         }
       }
     }

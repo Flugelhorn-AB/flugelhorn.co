@@ -1,2 +1,20 @@
+@import "../../base/index.scss";
 .about {
+  .pronounce {
+    background-color: $white103;
+    padding: $mn/15 $mn/6;
+    color: $black102;
+    font-weight: 200;
+  }
+
+  .hyperHover {
+    transition-duration: 100ms;
+    &:hover {
+      transition-duration: 100ms;
+      //   transform: rotateY(360deg);
+      transform: rotateZ(-1deg) scale(1.02);
+      text-decoration: underline;
+      //   text-decoration-color: $black102;
+    }
+  }
 }

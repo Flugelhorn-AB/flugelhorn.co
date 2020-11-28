@@ -7,7 +7,6 @@ import Head from "../../components/head";
 import { fetcher, url } from "../../utils/fetcher";
 import style from "./project.module.scss";
 import AboutBlock from "../../components/AboutBlock.js";
-import Head from "../../components/head";
 
 const Project = ({ details }) => {
   // const {project: {details}} = props

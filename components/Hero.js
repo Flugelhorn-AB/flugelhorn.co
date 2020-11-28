@@ -20,10 +20,11 @@ const Hero = () => {
                     transform: `translateY(-${offset * 0.6}px)`,
                }}
                className={style.hero}
-          >
+               >
 
-
-               <div
+               <div className={style.text}></div>
+               <div className={style.image}></div>
+                    <div
                     style={{ opacity: offset * 0.001 }}
                     className={style.overlay}
                ></div>

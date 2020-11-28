@@ -8,7 +8,7 @@
      position: relative;
      background: $white102;
      flex-wrap: wrap;
-     padding: 10px;
+     padding: 10px 0;
      padding-top: 50px;
      justify-items: center;
      @include mediaDesktop {
@@ -16,7 +16,7 @@
      }
 
      .footerItems {
-          //   @include content;
+          @include content;
           width: 100%;
           display: flex;
           flex-wrap: wrap;
@@ -26,10 +26,9 @@
      }
      .flugelhorn {
           width: 100%;
-          @include subHeadlineL;
+          padding: 0px;
+          @include textArticleParagraph;
           color: $gray101;
-          padding: 5px 0;
-          font-weight: 300;
           a {
                &:hover {
                     color: $gray102;
@@ -43,11 +42,10 @@
           width: 50%;
           display: flex;
           flex-direction: column;
-          @include subHeadlineL;
-          font-weight: 300;
-
+          @include textArticleParagraph;
           margin: 0;
-
+          @include mediaTablet {
+          }
           a {
                padding: 5px 0px 0 0;
                color: $gray101;
@@ -61,7 +59,7 @@
           @include mediaDesktop {
                text-align: right;
                flex-direction: row;
-               margin-right: auto;
+               margin-left: auto;
                width: auto;
                a {
                     padding-right: 20px;
@@ -82,10 +80,15 @@
      .copyright {
           width: 100%;
           height: auto;
-          @include subHeadlineM;
-          font-weight: 300;
-          padding: 5px 0;
+          @include textArticleParagraph;
+          font-size: 14px;
           color: $gray101;
+
+          @include mediaTablet {
+               padding-bottom: $mn/4;
+
+               margin-top: 5px;
+          }
      }
      a {
           display: inline-block;

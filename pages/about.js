@@ -41,9 +41,9 @@ const About = () => {
         </p>
 
         <p>
-          The ™ maxim "Lead the Change" is present in everything we do. We
-          analyze the current world situation and trends to build things that
-          facilitates the lives of others.
+          The schools indoctrinated maxim "Lead the Change" is present in
+          everything we do. We analyze the current world situation and trends to
+          build things that facilitates the lives of others.
         </p>
       </AboutBlock>
       <AboutBlock title="What we do">

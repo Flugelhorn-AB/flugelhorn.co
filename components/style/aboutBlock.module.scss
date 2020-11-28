@@ -8,6 +8,7 @@
   .content {
     display: flex;
     flex-direction: column;
+
     @include content;
     position: relative;
 
@@ -32,7 +33,6 @@
         padding-top: 0;
       }
     }
-
     .children {
       h2 {
         @include subHeadlineL;
@@ -52,6 +52,30 @@
         padding-left: $mn;
       }
 
+      // .children {
+      //   p {
+      //     @include textArticleParagraph;
+      //     padding-bottom: $mn/6;
+      //   }
+      //   .quote,
+      //   i {
+      //     display: block;
+      //     font-style: italic;
+      //     padding-left: $mn;
+      //   }
+
+      //   img,
+      //   video {
+      //     width: 100%;
+      //     height: auto;
+      //   }
+      // }
+      a {
+        display: inline-block;
+        position: relative;
+        transition-duration: 100ms;
+        @include textArticleParagraph;
+      }
       div {
         width: 100%;
         height: auto;
@@ -61,24 +85,25 @@
           width: 100%;
           height: auto;
         }
-      }
-      a {
-        display: inline-block;
-        position: relative;
-        transition-duration: 100ms;
-        @include textArticleParagraph;
 
-        &:hover {
+        a {
+          display: inline-block;
+          position: relative;
           transition-duration: 100ms;
-          color: $blue101;
-          transform: rotateZ(-1deg) scale(1.02);
-          text-decoration: underline;
-        }
-        p {
-          transition-duration: 100ms;
+          @include textArticleParagraph;
+
           &:hover {
             transition-duration: 100ms;
             color: $blue101;
+            transform: rotateZ(-1deg) scale(1.02);
+            text-decoration: underline;
+          }
+          p {
+            transition-duration: 100ms;
+            &:hover {
+              transition-duration: 100ms;
+              color: $blue101;
+            }
           }
         }
       }
@@ -92,7 +117,6 @@
       }
     }
   }
-
   @include mediaTablet {
     padding-top: $mn;
     .content {

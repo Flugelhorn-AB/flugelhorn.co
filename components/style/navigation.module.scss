@@ -47,7 +47,7 @@
                }
           }
 
-          @media screen and (min-width: 600px) {
+          @include mediaTablet {
                display: none;
           }
      }
@@ -95,7 +95,7 @@
                     color: $black104;
                }
           }
-          @media screen and (min-width: 600px) {
+          @include mediaTablet {
                display: flex;
 
                a {
@@ -129,7 +129,7 @@
                     // transition: color 100ms linear;
                }
           }
-          @media screen and (min-width: 600px) {
+          @include mediaTablet {
                display: none;
                a {
                     display: none;
@@ -163,12 +163,12 @@
                @include logoFont;
                font-size: 30px;
                // position: absolute;
-               left: 5px;
+
                top: 15px;
                display: block;
 
                position: relative;
-               @media screen and (min-width: 600px) {
+               @include mediaTablet {
                     left: unset;
                     top: unset;
                     @include logoFont;
@@ -186,10 +186,10 @@
      a {
           // padding-left: 20px;
      }
-     @media screen and (min-width: 600px) {
+     @include mediaTablet {
           display: flex;
 
-          padding: 40px;
+          padding: 40px 0;
           flex-direction: row;
           position: fixed;
           justify-content: flex-end;

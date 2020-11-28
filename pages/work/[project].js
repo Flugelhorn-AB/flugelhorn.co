@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Router from "next/router";
 import { useEffect } from "react";
-import Head from "../../components/head";
 import Navigation from "../../components/Navigation";
 import ProjectHero from "../../components/ProjectHero";
 import { fetcher, url } from "../../utils/fetcher";
 import style from "./project.module.scss";
+import AboutBlock from "../../components/AboutBlock.js";
 
 const Project = ({ details }) => {
   // const {project: {details}} = props
@@ -24,57 +24,40 @@ const Project = ({ details }) => {
 
       <ProjectHero img={coverImg} />
 
-      <div className={style.project}>
-        <div className={style.details}>
-          <h2 className={style.name}>{details.name}</h2>
-          <h2 className={style.tags}>{details.tags}</h2>
-          <h2 className={style.intro}>{details.intro}</h2>
-
-          {details.introImage.url ? (
-            <Link href={details.link}>
-              <a>
-                <img
-                  className={style.introImage}
-                  src={details.introImage.url}
-                />
-              </a>
-            </Link>
-          ) : (
-            ""
-          )}
-          <Link href={details.link}>
-            <a className={style.link}>View ↗</a>
-          </Link>
-
-          <div className={style.stack}>
-            {details.stack.map((technology) => {
-              return <p>{technology.technology}</p>;
-            })}
-          </div>
+      <AboutBlock title={details.name}>
+        <p className={style.tags}>{details.tags}</p>
+        <p className={style.intro}>{details.intro}</p>
+        <Link href={details.link}>
+          <a>Visit ↗</a>
+        </Link>
+        <div className={style.stack}>
+          {details.stack.map((technology) => {
+            return <p key={technology.technology}>{technology.technology}</p>;
+          })}
         </div>
+      </AboutBlock>
 
-        <div className={style.descriptionContainer}>
-          <div className={style.description}>
-            <h1>About</h1>
-            <p>{details.description}</p>
-          </div>
-        </div>
+      <AboutBlock title="How we worked">
+        {details.howWeWorked.map((step) => {
+          console.log(step);
+          return (
+            <div key={step.id} className={style.step}>
+              <p>{step.text}</p>
+              {step.image[0] ? <img src={step.image[0].url} /> : " "}
+            </div>
+          );
+        })}
+      </AboutBlock>
 
-        <div className={style.processContainer}>
-          <h1>Project Overview</h1>
-          <div className={style.process}>
-            {details.stepProcess.map((step) => {
-              return (
-                <div key={step.id} className={style.step}>
-                  <p>
-                    {step.id}. {step.step}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <AboutBlock title="What we did">
+        {details.whatWeDid.map((step) => {
+          return (
+            <div key={step.id} className={style.step}>
+              <p>{step.text}</p>
+            </div>
+          );
+        })}
+      </AboutBlock>
     </div>
   );
 };

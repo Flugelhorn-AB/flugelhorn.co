@@ -9,7 +9,6 @@
      grid-gap: 10px;
      grid-auto-rows: 100px;
      // position: sticky;
-     background: $white101;
      //  flex-wrap: wrap;
      @include mediaTablet {
           grid-template-columns: repeat(2, calc(50% - 5px));

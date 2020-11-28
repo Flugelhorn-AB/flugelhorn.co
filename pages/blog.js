@@ -10,7 +10,12 @@ const Blog = ({ articles }) => {
 
   return (
     <div className={style.blog}>
-      <Head />
+      <Head
+        title="Blog | Flugelhorn Digital Web Agency"
+        description="
+        Read our latest articles about web, design and travel. Learn the latest within web development and graphic design."
+        image="/flugel-fam.png"
+      />
       <Navigation />
       <BlogGallery articles={articles} />
       {/* <div className={style.posts}>

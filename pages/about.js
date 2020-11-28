@@ -8,7 +8,12 @@ import style from "./style/about.module.scss";
 const About = () => {
   return (
     <div className={style.about}>
-      <Head />
+      <Head
+        title="About | Flugelhorn Digital Web Agency"
+        description="
+        Information about Flugelhorn. Who we are and what we do."
+        image="/flugel-fam.png"
+      />
       <Navigation />
       <ProjectHero img="/flugel-fam.png" />
       <AboutBlock title="The Flugel Fam">

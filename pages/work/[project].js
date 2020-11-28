@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Router from "next/router";
 import { useEffect } from "react";
+import Head from "../../components/head";
 import Navigation from "../../components/Navigation";
 import ProjectHero from "../../components/ProjectHero";
 import { fetcher, url } from "../../utils/fetcher";
@@ -10,70 +11,71 @@ const Project = ({ details }) => {
   // const {project: {details}} = props
 
   console.log(details);
-const coverImg = details.cardImage.url;
+  const coverImg = details.cardImage.url;
 
   return (
-
-
     <div className={style.projectContainer}>
-        
-        <Navigation />
-        
-        <ProjectHero img={coverImg} />
+      <Head
+        title={`${details.name} | Flugelhorn Digital Web Agency`}
+        description={details.intro}
+        image={details.introImage.url}
+      />
+      <Navigation />
 
-        <div className={style.project}>
+      <ProjectHero img={coverImg} />
+
+      <div className={style.project}>
         <div className={style.details}>
-            <h2 className={style.name}>{details.name}</h2>
-            <h2 className={style.tags}>{details.tags}</h2>
-            <h2 className={style.intro}>{details.intro}</h2>
+          <h2 className={style.name}>{details.name}</h2>
+          <h2 className={style.tags}>{details.tags}</h2>
+          <h2 className={style.intro}>{details.intro}</h2>
 
-            {details.introImage.url ? 
+          {details.introImage.url ? (
             <Link href={details.link}>
-                <a>
-                    <img className={style.introImage} src={details.introImage.url} />
-                </a>
+              <a>
+                <img
+                  className={style.introImage}
+                  src={details.introImage.url}
+                />
+              </a>
             </Link>
+          ) : (
+            ""
+          )}
+          <Link href={details.link}>
+            <a className={style.link}>View ↗</a>
+          </Link>
 
-: ''}
-      <Link href={details.link}>
-      <a  className={style.link}>View ↗</a>
-      </Link>
+          <div className={style.stack}>
+            {details.stack.map((technology) => {
+              return <p>{technology.technology}</p>;
+            })}
+          </div>
+        </div>
 
-
-      <div className={style.stack}>
-      {details.stack.map(technology => {
-          return <p>{technology.technology}</p>
-      })}
-</div>
-      </div>
-
-
-      
-<div className={style.descriptionContainer}>
-        <div className={style.description}>
+        <div className={style.descriptionContainer}>
+          <div className={style.description}>
             <h1>About</h1>
-      <p>{details.description}</p>
-      </div></div>
+            <p>{details.description}</p>
+          </div>
+        </div>
 
-
-
- 
-
-      <div className={style.processContainer}> 
+        <div className={style.processContainer}>
           <h1>Project Overview</h1>
-      <div className={style.process}>
-      {details.stepProcess.map(step => {
-          return <div key={step.id} className={style.step}><p>{step.id}. {step.step}</p></div>
-      })}
-      </div></div>
-
-
-
-
+          <div className={style.process}>
+            {details.stepProcess.map((step) => {
+              return (
+                <div key={step.id} className={style.step}>
+                  <p>
+                    {step.id}. {step.step}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-
-
   );
 };
 

@@ -35,7 +35,11 @@ const Article = ({ article }) => {
 
   return (
     <div className={style.article}>
-      <Head />
+      <Head
+        title={`${article.title} | Flugelhorn`}
+        description={article.intro}
+        image={article.cardPicture.url}
+      />
       <Navigation />
       <main className={style.main}>
         <div className={style.intro}>

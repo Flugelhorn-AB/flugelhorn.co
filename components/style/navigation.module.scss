@@ -8,15 +8,15 @@
      z-index: 200;
      top: 0;
      left: 0;
-     color: $black101;
+     color: $white101;
 
      margin: 0 auto;
-
+     transition: all 0.5s;
+     backdrop-filter: none;
      .navigationContainer {
           justify-content: space-between;
           display: flex;
           @include content;
-
           width: 100%;
      }
 
@@ -165,7 +165,7 @@
           a {
                transition: color 150ms;
                // color: $black103;
-               color: $white102;
+
                @include logoFont;
                font-size: 30px;
                // position: absolute;
@@ -181,11 +181,6 @@
                     font-size: 40px;
                }
                z-index: 100;
-          }
-     }
-     .logoColorChange {
-          a {
-               transition: color 150ms;
           }
      }
 
@@ -205,14 +200,38 @@
 .hideNav {
      transition: transform 0.5s;
      transform: translateY(-100px);
-     backdrop-filter: blur(15px);
+
+     a {
+     }
 }
 .showNav {
      transition: transform 0.5s;
      transform: translateY(0px);
-     backdrop-filter: blur(15px);
 }
 
 .mobileMenuExpanded {
      transform: none;
+}
+
+.navNotOnTop {
+     background-color: rgba(255, 255, 255, 0.5);
+     transition: all 0.5s;
+     backdrop-filter: blur(15px);
+     .navigationContent {
+          a {
+               color: $black102;
+          }
+     }
+     .menuButton {
+          .span {
+               span {
+                    background: $black102;
+               }
+          }
+     }
+     .logo {
+          a {
+               color: $black102;
+          }
+     }
 }

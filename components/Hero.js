@@ -1,9 +1,10 @@
 import style from './style/hero.module.scss';
 import { useEffect, useRef, useState } from 'react';
-
+import Link from 'next/link';
 const Hero = () => {
      const [offset, setOffset] = useState(0);
      const [randomColor, setRandomColor] = useState('');
+     const [randomQuote, setRandomQuote] = useState({ page: '/' });
      const handleScroll = () => {
           setOffset(window.pageYOffset);
      };
@@ -33,9 +34,44 @@ const Hero = () => {
           '#d1a63f',
      ];
 
+     const quoteArray = [
+          {
+               emoji: '🛠',
+               page: '/contact',
+               text: 'Work with us ↗',
+          },
+          {
+               emoji: '📚 ',
+               page: '/blog',
+               text: 'Check out our blog section ↗',
+          },
+          {
+               emoji: '👾',
+               page: '/work',
+               text: 'Check out our previous projects ↗',
+          },
+               emoji: '👋',
+               page: '/contact',
+               text: "Don't be a stranger, say hi ↗",
+          },
+          {
+               emoji: '📯',
+               page: '/about',
+               text: 'Flugelhorn Digital Agency ↗',
+          },
+          {
+               emoji: '🌍',
+               page: '/about',
+               text: 'Location independent digital agency ↗',
+          },
+     ];
+
      useEffect(() => {
           setRandomColor(
                colorArray[Math.floor(Math.random() * colorArray.length)]
+          );
+          setRandomQuote(
+               quoteArray[Math.floor(Math.random() * quoteArray.length)]
           );
      }, []);
 
@@ -44,17 +80,19 @@ const Hero = () => {
                style={{
                     transform: `translateY(-${offset * 0.6}px)`,
                     backgroundColor: randomColor,
+                    opacity: 1 - offset * 0.001,
                }}
                className={style.hero}
           >
                <div className={style.text}>
-                    <h1>Work with us</h1>
-                    <p>tellus based digital solutions provider</p>
+                    <h2>{randomQuote.emoji}</h2>
+                    <Link href={randomQuote.page}>
+                         <a>
+                              <h1>{randomQuote.text}</h1>
+                         </a>
+                    </Link>
+                    <p>tellus based digital agency</p>
                </div>
-               <div
-                    style={{ opacity: offset * 0.001 }}
-                    className={style.overlay}
-               ></div>
           </div>
      );
 };

@@ -26,21 +26,24 @@
           h1 {
                @include headlineL;
                color: $white101;
+
+               position: relative;
+               transition-duration: 100ms;
+
+               &:hover {
+                    transition-duration: 100ms;
+                    color: $white101;
+                    transform: rotateZ(-1deg) scale(1.02);
+                    text-decoration: underline;
+               }
+          }
+          h2 {
+               font-size: 46px;
+               z-index: 1000;
           }
           p {
                @include textArticleParagraph;
                color: $white101;
           }
-     }
-
-     .overlay {
-          background: $white101;
-
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          position: absolute;
-          opacity: 0;
      }
 }

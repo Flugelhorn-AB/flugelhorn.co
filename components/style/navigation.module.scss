@@ -8,16 +8,15 @@
      z-index: 200;
      top: 0;
      left: 0;
-     //  background: rgba(40, 60, 73, 1);
-     background: rgba($white101, 0.6);
      color: $black101;
+
      margin: 0 auto;
-     backdrop-filter: blur(15px);
+
      .navigationContainer {
           justify-content: space-between;
           display: flex;
-
           @include content;
+
           width: 100%;
      }
 
@@ -43,7 +42,8 @@
                     width: 100%;
                     border-radius: 100px;
                     height: 3px;
-                    background: $black101;
+                    // background: $black101;
+                    background: $white102;
                }
           }
 
@@ -90,7 +90,8 @@
                z-index: 1000;
                font-weight: 400;
                font-size: 22px;
-               color: $black103;
+               // color: $black103;
+               color: $white102;
 
                &:hover {
                     color: $black104;
@@ -163,7 +164,8 @@
      .logo {
           a {
                transition: color 150ms;
-               color: $black103;
+               // color: $black103;
+               color: $white102;
                @include logoFont;
                font-size: 30px;
                // position: absolute;
@@ -203,10 +205,12 @@
 .hideNav {
      transition: transform 0.5s;
      transform: translateY(-100px);
+     backdrop-filter: blur(15px);
 }
 .showNav {
      transition: transform 0.5s;
      transform: translateY(0px);
+     backdrop-filter: blur(15px);
 }
 
 .mobileMenuExpanded {

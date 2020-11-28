@@ -24,18 +24,34 @@ const Project = ({ details }) => {
 
       <Navigation />
 
-      <ProjectHero img={coverImg} />
+      <ProjectHero img={coverImg} isWork={true} />
 
       <AboutBlock title={details.name}>
-        <p className={style.tags}>{details.tags}</p>
+        <h2 className={style.tags}>{details.tags}</h2>
         <p className={style.intro}>{details.intro}</p>
-        <Link href={details.link}>
-          <a>Visit ↗</a>
-        </Link>
+        {details.introImage.ext === ".mp4" ? (
+          <div>
+            <video className={style.introVideo} muted autoPlay loop>
+              <source src={details.introImage.url} />
+            </video>
+          </div>
+        ) : (
+          <div>
+            <img src={details.introImage.url} alt="" />
+          </div>
+        )}
+
+        <a target="_blank" href={details.link}>
+          <h2>Visit ↗</h2>
+        </a>
+
         <div className={style.stack}>
-          {details.stack.map((technology) => {
-            return <p key={technology.technology}>{technology.technology}</p>;
-          })}
+          <p> Stack:</p>
+          <div className={style.technologies}>
+            {details.stack.map((technology) => {
+              return <p key={technology.technology}>{technology.technology}</p>;
+            })}
+          </div>
         </div>
       </AboutBlock>
 

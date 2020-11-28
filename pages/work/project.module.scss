@@ -1,7 +1,25 @@
 @import "../../base/index.scss";
 
 .projectContainer {
+  // .tags {
+  //   @include subHeadlineL;
+  // }
   .step {
     padding-bottom: $mn;
+    img {
+      margin-top: $mn/6;
+    }
+  }
+
+  .introVideo {
+    margin: $mn/3 0;
+    border: 1px solid $gray102;
+  }
+
+  .stack {
+    padding-top: $mn/4;
+    .technologies {
+      padding-left: $mn/2;
+    }
   }
 }

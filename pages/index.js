@@ -9,15 +9,19 @@ import style from "./style/index.module.scss";
 import Footer from "../components/Footer";
 
 const Index = (props) => {
-
   const index = useRef();
   return (
     <div ref={index} className={`${style.index} `}>
-      <Head />
-      <Navigation  />
+      <Head
+        title="Flugelhorn | Digital Web Agency 🐙"
+        description="
+We design and develop mesmerizing digital products for companies and organizations. Always responsive, always search engine optimized, always stunning."
+        image="/flugel-fam.png"
+      />
+      <Navigation />
       <Hero indexRef={index} />
       <section id="work">
-      <ProjectGallery  projects={props.projects} />
+        <ProjectGallery projects={props.projects} />
       </section>
       <Footer />
     </div>
@@ -25,9 +29,7 @@ const Index = (props) => {
 };
 
 export const getStaticProps = async () => {
-  const projects = await fetcher(
-    `${url}/projects`
-  );
+  const projects = await fetcher(`${url}/projects`);
   console.log(projects);
   return { props: { projects } };
 };

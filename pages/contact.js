@@ -7,7 +7,12 @@ import style from "./style/contact.module.scss";
 const Contact = () => {
   return (
     <div className={style.contact}>
-      <Head />
+      <Head
+        title="Contact | Flugelhorn Digital Web Agency"
+        description="
+        Information about how you can contact us and where you can visit us."
+        image="/flugel-fam.png"
+      />
       <Navigation />
       <ProjectHero img="/mexico-1-.jpeg" />
       <AboutBlock title="Contact us">

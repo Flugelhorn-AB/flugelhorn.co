@@ -6,6 +6,7 @@ import ProjectHero from "../../components/ProjectHero";
 import { fetcher, url } from "../../utils/fetcher";
 import style from "./project.module.scss";
 import AboutBlock from "../../components/AboutBlock.js";
+import Head from "../../components/head";
 
 const Project = ({ details }) => {
   // const {project: {details}} = props
@@ -20,6 +21,7 @@ const Project = ({ details }) => {
         description={details.intro}
         image={details.introImage.url}
       />
+
       <Navigation />
 
       <ProjectHero img={coverImg} />
@@ -39,10 +41,13 @@ const Project = ({ details }) => {
 
       <AboutBlock title="How we worked">
         {details.howWeWorked.map((step) => {
-          console.log(step);
+          const paragraphs = step.text.split("<br/>");
+          console.log(paragraphs);
           return (
             <div key={step.id} className={style.step}>
-              <p>{step.text}</p>
+              {paragraphs.map((p, i) => {
+                return <p key={i}>{p}</p>;
+              })}
               {step.image[0] ? <img src={step.image[0].url} /> : " "}
             </div>
           );

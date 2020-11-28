@@ -1,124 +1,140 @@
-@import '../../base/index.scss';
+@import "../../base/index.scss";
 
 .project {
-     display: flex;
-     position: relative;
-     //   border: 1px solid black;
-     justify-content: center;
-     background: $white102;
-     overflow: hidden;
+  display: flex;
+  position: relative;
+  //   border: 1px solid black;
+  justify-content: center;
+  background: $blue102;
+  overflow: hidden;
 
-     &:hover {
-          .imageContainer {
-               transform: scale(1.03);
-               transition: transform 1000ms ease-out;
-          }
-     }
+  &:hover {
+    .imageContainer {
+      transform: scale(1.03);
+      transition: transform 1000ms ease-out;
+    }
+  }
 
-     //   flex-wrap: wrap;
-     .imageContainer {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          transition: transform 1000ms ease-out;
-          img {
-               width: 100%;
-               height: 100%;
-               object-fit: cover;
-               top: 0;
-               bottom: 0;
-               left: 0;
-               right: 0;
-          }
-     }
+  //   flex-wrap: wrap;
+  .imageContainer {
+    width: 100%;
+    height: 100%;
+    transition: transform 1000ms ease-out;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    img {
+      width: auto;
+      height: 80%;
+      object-fit: contain;
+      //  top: 0;
+      //  bottom: 0;
+      //  left: 0;
+      margin-right: 10%;
+      margin-bottom: 3%;
+      //  right: 0;
+    }
+  }
 
-     .info {
-          z-index: 1;
-          padding-top: $mn;
-          text-align: center;
+  .info {
+    z-index: 1;
+    padding-top: $mn;
+    text-align: center;
 
-          .tags {
-               margin-top: $mn/5;
-          }
+    .tags {
+      margin-top: $mn/5;
+    }
 
-          .intro {
-               margin-top: $mn/4;
-               width: 100%;
-               padding: 0 40px;
-               @include textM;
-               @include mediaTablet {
-                    width: 100%;
-                    padding: 0 20px;
-               }
-          }
+    .intro {
+      margin-top: $mn/4;
+      padding: 0 40px;
+      @include textM;
+      @include mediaTablet {
+        width: $mn * 6;
+        padding: 0 20px;
+      }
+    }
 
-          .link {
-               @include textM;
-               display: block;
-               margin-top: $mn/4;
-               color: #00f;
-          }
-     }
+    .link {
+      @include textM;
+      display: block;
+      margin-top: $mn/4;
+      color: #00f;
+    }
+  }
 
-     .textDark {
-          .name {
-               color: $black101;
-          }
-          .tags {
-               color: $black101;
-          }
+  .textDark {
+    .name {
+      color: $black101;
+    }
+    .tags {
+      color: $black101;
+    }
 
-          .intro {
-               color: $gray101;
-          }
-     }
+    .intro {
+      color: $gray101;
+    }
+  }
+  .textWhite {
+    .name {
+      color: $white101;
+    }
+    .tags {
+      color: $white101;
+    }
+
+    .intro {
+      color: $gray101;
+    }
+  }
 }
 
 .projectLarge {
-     //  height: 470px;
-     grid-row: span 4;
-     grid-column: span 2;
-     @include mediaTablet {
-          grid-row: span 5;
-          width: 100vw;
-          margin-left: -10px;
-     }
-     @include mediaDesktop {
-          grid-row: span 6;
-     }
-     .info {
-          .intro {
-          }
-          .name {
-               @include headlineL;
-          }
-          .tags {
-               @include subHeadlineL;
-          }
-     }
+  //  height: 470px;
+  grid-row: span 4;
+  grid-column: span 2;
+  @include mediaTablet {
+    grid-row: span 5;
+    width: 100vw;
+    margin-left: -10px;
+  }
+  @include mediaDesktop {
+    grid-row: span 6;
+  }
+  .info {
+    .intro {
+    }
+    .name {
+      @include headlineL;
+    }
+    .tags {
+      @include subHeadlineL;
+    }
+  }
 }
 .projectSmal {
-     width: 100%;
+  width: 100%;
 
-     margin: 0px 0px;
+  margin: 0px 0px;
 
-     grid-row: span 3;
-     grid-column: span 2;
-     //   margin-top: 20px;
-     @include mediaTablet {
-          grid-row: span 4;
-          grid-column: span 1;
-     }
-     @include mediaDesktop {
-          grid-row: span 5;
-          grid-column: span 1;
-     }
-     .info {
-          .name {
-               @include headlineM;
-          }
-          .tags {
-               @include subHeadlineM;
-          }
-     }
+  grid-row: span 3;
+  grid-column: span 2;
+  //   margin-top: 20px;
+  @include mediaTablet {
+    grid-row: span 4;
+    grid-column: span 1;
+  }
+  @include mediaDesktop {
+    grid-row: span 5;
+    grid-column: span 1;
+  }
+  .info {
+    .name {
+      @include headlineM;
+    }
+    .tags {
+      @include subHeadlineL;
+    }
+  }
 }

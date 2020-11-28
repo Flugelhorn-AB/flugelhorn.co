@@ -3,6 +3,7 @@
 .hero {
      width: 100%;
      height: 100vh;
+     margin-top: 15px;
      @include mediaTablet {
           height: 70vh;
      }
@@ -11,6 +12,7 @@
      }
      display: flex;
      background: black;
+     flex-wrap: wrap;
      align-items: center;
      justify-content: center;
      position: sticky;
@@ -31,6 +33,24 @@
           @include logoFont;
           font-size: 100px;
           color: white;
+     }
+     .text {
+          width: 100%;
+          height: 35%;
+          background: $gray101;
+          @include mediaTablet {
+               width: 35%;
+               height: 100%;
+          }
+     }
+     .image {
+          width: 100%;
+          height: 65%;
+          background: $gray102;
+          @include mediaTablet {
+               width: 65%;
+               height: 100%;
+          }
      }
      .overlay {
           background: $white101;

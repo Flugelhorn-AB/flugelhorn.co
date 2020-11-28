@@ -1,6 +1,7 @@
 import style from "./style/navigation.module.scss";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Footer from "./Footer";
 const Navigation = () => {
   const nav = useRef();
   const [menuExpanded, setMenuExpanded] = useState(false);
@@ -14,11 +15,11 @@ const Navigation = () => {
       window.addEventListener("resize", () =>
         setWindowWidth(window.innerWidth)
       );
-      if (windowWidth >= 600) {
+      if (windowWidth >= 735) {
         setMenuExpanded(false);
         setIsMobile(false);
       }
-      if (windowWidth < 600) {
+      if (windowWidth < 735) {
         setIsMobile(true);
       }
     }, [windowWidth]);
@@ -62,7 +63,7 @@ const Navigation = () => {
   return (
     <div
       className={`${style.navigation} 
-               `}
+                ${menuExpanded ? style.mobileMenuExpanded : ''}`}
       ref={nav}
     >
       <div className={style.navigationContainer}>
@@ -102,18 +103,19 @@ const Navigation = () => {
           menuExpanded ? style.expanded : style.compressed
         }`}
       >
-        <Link href="#">
-          <a>Work</a>
+        <Link href="/#work">
+          <a className={style.mobileItem}>Work</a>
         </Link>
-        <Link href="#">
-          <a>Blog</a>
+        <Link href="/blog">
+          <a className={style.mobileItem}>Blog</a>
         </Link>
         <Link href="/about">
-          <a>About</a>
+          <a className={style.mobileItem}>About</a>
         </Link>
         <Link href="/contact">
-          <a>Contact</a>
+          <a className={style.mobileItem}>Contact</a>
         </Link>
+        <Footer />
       </div>
     </div>
   );

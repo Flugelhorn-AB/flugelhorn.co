@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
     <div className={style.divider}></div>
         <div className={style.copyright}>
-            Copyright 2020
+        © 2020 Flugelhorn
         </div>
         </div>
         

@@ -1,5 +1,6 @@
 import BlogCard from "../components/BlogCard";
 import BlogGallery from "../components/BlogGallery";
+import Footer from "../components/Footer";
 import Head from "../components/head";
 import Navigation from "../components/Navigation";
 import { url, fetcher } from "../utils/fetcher";
@@ -25,6 +26,7 @@ const Blog = ({ articles }) => {
           })}
         </div>
       </div> */}
+<Footer />
     </div>
   );
 };

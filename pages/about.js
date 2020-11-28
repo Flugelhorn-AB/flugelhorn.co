@@ -1,4 +1,5 @@
 import AboutBlock from "../components/AboutBlock";
+import Footer from "../components/Footer";
 import Head from "../components/head";
 import Navigation from "../components/Navigation";
 
@@ -93,6 +94,7 @@ const About = () => {
           />
         </div>
       </AboutBlock>
+      <Footer />
     </div>
   );
 };

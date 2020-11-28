@@ -87,12 +87,14 @@
           display: none;
 
           a {
-               z-index: 100;
+               z-index: 1000;
                font-weight: 400;
-               font-size: 20px;
+               font-size: 22px;
                color: $black103;
+
                &:hover {
                     color: $black104;
+                    text-decoration: underline;
                }
           }
           @include mediaTablet {

@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import ProjectGallery from "../components/ProjectGallery";
 import style from "./style/index.module.scss";
+import Footer from "../components/Footer";
 
 const Index = (props) => {
 
@@ -18,6 +19,7 @@ const Index = (props) => {
       <section id="work">
       <ProjectGallery  projects={props.projects} />
       </section>
+      <Footer />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import ProjectHero from '../../components/ProjectHero';
 import { fetcher, url } from '../../utils/fetcher';
 import style from './project.module.scss';
 import AboutBlock from '../../components/AboutBlock.js';
+import Footer from '../../components/Footer';
 
 const Project = ({ details }) => {
      // const {project: {details}} = props
@@ -62,6 +63,7 @@ const Project = ({ details }) => {
                               );
                          })}
                     </AboutBlock>
+                    <Footer />
                </div>
      );
 };

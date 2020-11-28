@@ -58,6 +58,7 @@
                     display: inline-block;
                     position: relative;
                     transition-duration: 100ms;
+                    z-index: 100;
                     &:hover {
                          transition-duration: 100ms;
                          color: $blue101;

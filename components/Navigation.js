@@ -8,6 +8,7 @@ const Navigation = () => {
      const [windowWidth, setWindowWidth] = useState();
      const [isMobile, setIsMobile] = useState();
      const [offset, setOffset] = useState(0);
+     const [menuUnderlay, setMenuUnderlay] = useState(false);
 
      if (typeof window !== 'undefined') {
           useEffect(() => {
@@ -31,32 +32,49 @@ const Navigation = () => {
           };
      }, []);
 
+     let lastScrollTop = 0;
+     const navHandler = async (mobileNav) => {
+          if (nav.current) {
+               var scrollTop =
+                    window.pageYOffset || document.documentElement.scrollTop;
+
+               let isExpanded = false;
+               await setMenuExpanded((prev) => {
+                    isExpanded = prev;
+                    return prev;
+               });
+               console.log(isExpanded);
+               if (scrollTop >= 100 && !isExpanded) {
+                    nav.current.classList.add(style.navNotOnTop);
+               } else {
+                    nav.current.classList.remove(style.navNotOnTop);
+               }
+
+               if (scrollTop > 100) {
+                    setMenuUnderlay(true);
+                    nav.current.classList.add(style.scrollNav);
+               } else {
+                    setMenuUnderlay(false);
+                    nav.current.classList.remove(style.scrollNav);
+               }
+               if (
+                    scrollTop > lastScrollTop &&
+                    nav.current &&
+                    scrollTop > 0 &&
+                    mobileNav
+               ) {
+                    nav.current.classList.remove(style.showNav);
+                    nav.current.classList.add(style.hideNav);
+               } else if (nav.current) {
+                    nav.current.classList.remove(style.hideNav);
+                    nav.current.classList.add(style.showNav);
+               }
+               lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+          }
+     };
+
      useEffect(() => {
-          let lastScrollTop = 0;
-
-          window.addEventListener(
-               'scroll',
-               function () {
-                    var scrollTop =
-                         window.pageYOffset ||
-                         document.documentElement.scrollTop;
-
-                    if (
-                         scrollTop > lastScrollTop &&
-                         nav.current &&
-                         scrollTop > 100
-                    ) {
-                         nav.current.classList.remove(style.showNav);
-                         nav.current.classList.add(style.hideNav);
-                    } else if (nav.current) {
-                         nav.current.classList.remove(style.hideNav);
-                         nav.current.classList.add(style.showNav);
-                    }
-
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-               },
-               false
-          );
+          window.addEventListener('scroll', navHandler, false);
      }, []);
 
      const handleScroll = async () => {
@@ -64,7 +82,10 @@ const Navigation = () => {
      };
 
      const handleMenuExpanded = async () => {
-          await setMenuExpanded(!menuExpanded);
+          setMenuExpanded((prev) => {
+               return !prev;
+          });
+          navHandler(false);
      };
 
      let colorOffset = 255 - offset * 1000;
@@ -75,37 +96,28 @@ const Navigation = () => {
           <div
                className={`${style.navigation}  
                 ${menuExpanded ? style.mobileMenuExpanded : ''}`}
-               style={{
-                    backgroundColor: `rgba(255,255,255, ${
-                         offset < 0.75 ? offset : 0.75
-                    })`,
-               }}
                ref={nav}
           >
                <div className={style.navigationContainer}>
                     <div className={`${style.logo} `}>
                          <Link href="/">
-                              <a
-                                   style={{
-                                        color: rgbOffset,
-                                   }}
-                              >
+                              <a style={{ color: menuExpanded ? 'black' : '' }}>
                                    Flugelhorn
                               </a>
                          </Link>
                     </div>
                     <div className={style.navigationContent}>
                          <Link href="/#work">
-                              <a style={{ color: rgbOffset }}>Work</a>
+                              <a>Work</a>
                          </Link>
                          <Link href="/blog">
-                              <a style={{ color: rgbOffset }}>Blog</a>
+                              <a>Blog</a>
                          </Link>
                          <Link href="/about">
-                              <a style={{ color: rgbOffset }}>About</a>
+                              <a>About</a>
                          </Link>
                          <Link href="/contact">
-                              <a style={{ color: rgbOffset }}>Contact</a>
+                              <a>Contact</a>
                          </Link>
                     </div>
                </div>
@@ -118,8 +130,8 @@ const Navigation = () => {
                     onClick={handleMenuExpanded}
                >
                     <div className={style.span}>
-                         <span style={{ backgroundColor: rgbOffset }} />
-                         <span style={{ backgroundColor: rgbOffset }} />
+                         <span />
+                         <span />
                     </div>
                </a>
                <div

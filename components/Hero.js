@@ -1,13 +1,29 @@
 import style from './style/hero.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import useMousePosition from '../hooks/useMousePosition.js';
+
 const Hero = () => {
      const [offset, setOffset] = useState(0);
      const [randomColor, setRandomColor] = useState('');
      const [randomQuote, setRandomQuote] = useState({ page: '/' });
+     const { x, y } = useMousePosition();
+
+     const heroText = useRef();
+
      const handleScroll = () => {
           setOffset(window.pageYOffset);
      };
+
+     const handleMouseMove = () => {};
+
+     useEffect(() => {
+          document.addEventListener('mousemove', handleMouseMove);
+
+          return () => {
+               document.removeEventListener('mousemove', handleMouseMove);
+          };
+     }, []);
 
      useEffect(() => {
           document.addEventListener('scroll', handleScroll);
@@ -17,21 +33,16 @@ const Hero = () => {
      }, []);
 
      const colorArray = [
-          '#74b095',
-          '#d970e1',
-          '#6bd946',
-          '#e97996',
-          '#66e293',
-          '#ef7a46',
-          '#71dbd6',
-          '#dcde3f',
-          '#7ba8e0',
-          '#9ec647',
-          '#d1a0d2',
-          '#71b36c',
-          '#d7a07c',
-          '#cdd68f',
-          '#d1a63f',
+          '#d4d83e',
+          '#e89cd8',
+          '#7de055',
+          '#86baf1',
+          '#eea663',
+          '#53dce3',
+          '#d5ca72',
+          '#73ddc0',
+          '#aad987',
+          '#5be09f',
      ];
 
      const quoteArray = [
@@ -68,6 +79,12 @@ const Hero = () => {
      ];
 
      useEffect(() => {
+          document.addEventListener('mousemove', () => {
+               console.log();
+          });
+     }, []);
+
+     useEffect(() => {
           setRandomColor(
                colorArray[Math.floor(Math.random() * colorArray.length)]
           );
@@ -85,8 +102,14 @@ const Hero = () => {
                }}
                className={style.hero}
           >
-               <div className={style.text}>
-                    <h2>{randomQuote.emoji}</h2>
+               <div
+                    ref={heroText}
+                    className={style.text}
+                    style={{
+                         transform: `translate(-${x / 500}%, -${y / 50}%) `,
+                    }}
+               >
+                    {/* <h2>{randomQuote.emoji}</h2> */}
                     <Link href={randomQuote.page}>
                          <a>
                               <h1>{randomQuote.text}</h1>

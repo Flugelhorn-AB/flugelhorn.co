@@ -43,7 +43,7 @@ const Navigation = () => {
                     isExpanded = prev;
                     return prev;
                });
-               console.log(isExpanded);
+
                if (scrollTop >= 100 && !isExpanded) {
                     nav.current.classList.add(style.navNotOnTop);
                } else {
@@ -97,6 +97,9 @@ const Navigation = () => {
                className={`${style.navigation}  
                 ${menuExpanded ? style.mobileMenuExpanded : ''}`}
                ref={nav}
+               style={{
+                    backgroundColor: `rgba(255,255,255, ${offset} / 10)`,
+               }}
           >
                <div className={style.navigationContainer}>
                     <div className={`${style.logo} `}>

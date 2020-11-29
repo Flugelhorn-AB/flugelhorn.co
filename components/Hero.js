@@ -106,7 +106,9 @@ const Hero = () => {
                     ref={heroText}
                     className={style.text}
                     style={{
-                         transform: `translate(-${x / 500}%, -${y / 50}%) `,
+                         transform: `translate(-${x / 500}%, -${
+                              y / 50
+                         }%) perspective(${x / 100000}px)`,
                     }}
                >
                     {/* <h2>{randomQuote.emoji}</h2> */}

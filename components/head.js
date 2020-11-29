@@ -5,7 +5,7 @@ const Head = (props) => {
     <NextHead>
       <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-152603515-6"
+        src="https://www.googletagmanager.com/gtag/js?id=G-M7XZ4WN2CR"
       ></script>
 
       <script
@@ -14,7 +14,8 @@ const Head = (props) => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'UA-181810819-1');`,
+        
+          gtag('config', 'G-M7XZ4WN2CR');`,
         }}
       />
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Router from "next/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Navigation from "../../components/Navigation";
 import ProjectHero from "../../components/ProjectHero";
 import Head from "../../components/head";
@@ -11,7 +11,25 @@ import AboutBlock from "../../components/AboutBlock.js";
 const Project = ({ details }) => {
   // const {project: {details}} = props
 
+  const video = useRef();
+
   const coverImg = details.cardImage.url;
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.addEventListener("scroll", handleScroll);
+      return () => {
+        document.removeEventListener("scroll", handleScroll);
+      };
+    }, 300);
+  }, []);
+
+  const handleScroll = () => {
+    if (video.current && window.pageYOffset > 200) {
+      video.current.play();
+      console.log("scroll");
+    }
+  };
 
   return (
     <div className={style.projectContainer}>
@@ -30,7 +48,7 @@ const Project = ({ details }) => {
         <p className={style.intro}>{details.intro}</p>
         {details.introImage.ext === ".mp4" ? (
           <div>
-            <video className={style.introVideo} muted autoPlay loop>
+            <video ref={video} className={style.introVideo} muted loop>
               <source src={details.introImage.url} />
             </video>
           </div>

@@ -11,7 +11,6 @@ import AboutBlock from "../../components/AboutBlock.js";
 const Project = ({ details }) => {
   // const {project: {details}} = props
 
-  console.log(details);
   const coverImg = details.cardImage.url;
 
   return (
@@ -58,7 +57,6 @@ const Project = ({ details }) => {
       <AboutBlock title="How we worked">
         {details.howWeWorked.map((step) => {
           const paragraphs = step.text.split("<br/>");
-          console.log(paragraphs);
           return (
             <div key={step.id} className={style.step}>
               {paragraphs.map((p, i) => {
@@ -95,7 +93,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params);
   const res = await fetcher(`${url}/projects/?name=${params.project}`);
 
   return { props: { details: res[0] } };

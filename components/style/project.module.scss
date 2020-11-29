@@ -10,7 +10,7 @@
 
   &:hover {
     .imageContainer {
-      transform: scale(1.03);
+      transform: scale(1.2);
       transition: transform 1000ms ease-out;
     }
   }
@@ -30,7 +30,6 @@
       margin-bottom: 3%;
     }
   }
-
   .info {
     z-index: 1;
     padding-top: $mn;

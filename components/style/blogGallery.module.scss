@@ -1,13 +1,13 @@
-@import "../../base/index.scss";
+@import '../../base/index.scss';
 .blogGallery {
-  @include content;
-
-  .intro {
-    margin-top: $mn * 1.5;
-    .title {
-      @include headlineL;
-    }
-    padding-bottom: $mn/2;
-    // border-bottom: 1px solid $gray102;
-  }
+     @include content;
+     min-height: 60vh;
+     .intro {
+          margin-top: $mn * 1.5;
+          .title {
+               @include headlineL;
+          }
+          padding-bottom: $mn/2;
+          // border-bottom: 1px solid $gray102;
+     }
 }

@@ -5,11 +5,17 @@ const ProjectGallery = ({ projects }) => {
   console.log(projects);
   return (
     <div className={style.projectGallery}>
-      {projects.sort((a, b) => {return a.id - b.id}).map((project) => {
-        return <Project details={project} key={project.id} />;
-      })}
-      {/* <Project />
+      <div className={style.content}>
+        {projects
+          .sort((a, b) => {
+            return a.order - b.order;
+          })
+          .map((project) => {
+            return <Project details={project} key={project.id} />;
+          })}
+        {/* <Project />
       <Project /> */}
+      </div>
     </div>
   );
 };

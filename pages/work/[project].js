@@ -28,7 +28,6 @@ const Project = ({ details }) => {
      const handleScroll = () => {
           if (video.current && window.pageYOffset > 200) {
                video.current.play();
-               console.log('scroll');
           }
      };
 

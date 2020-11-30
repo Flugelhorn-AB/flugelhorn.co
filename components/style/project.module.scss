@@ -12,11 +12,15 @@
     .imageContainer {
       .fast {
         transform: scale(1.25) rotate(-3deg) translateX(20px);
-        transition: transform 1000ms ease-out;
+        transition: transform 1500ms ease-out;
       }
       .slow {
         transform: scale(0.9) rotate(4deg) translateX(-10px);
-        transition: transform 1000ms ease-out;
+        transition: transform 1500ms ease-out;
+      }
+      .normal {
+        transform: scale(1.2) translateX(-10px);
+        transition: transform 2000ms ease-out;
       }
     }
   }
@@ -30,10 +34,13 @@
     justify-content: center;
     align-items: flex-end;
     img {
-      transition: transform 400ms ease-out;
+      transition: transform 800ms ease-out;
       width: auto;
       object-fit: contain;
       margin-bottom: 3%;
+    }
+    .normal {
+      margin-bottom: $mn/2;
     }
     .fast {
       z-index: 200;
@@ -98,7 +105,7 @@
   .imageContainer {
     img {
       margin-right: $mn * 1.5;
-      height: 55%;
+      height: 50%;
     }
   }
   .info {
@@ -117,7 +124,8 @@
     margin-left: -10px;
     .imageContainer {
       img {
-        margin-right: $mn * 2;
+        margin-right: $mn * 2.3;
+
         height: 55%;
       }
     }
@@ -135,11 +143,20 @@
   grid-column: span 2;
   //   margin-top: 20px;
   .imageContainer {
-    img {
+    // img {
+    .slow {
+      height: 40%;
+    }
+    .fast,
+    .normal {
       height: 45%;
     }
     @include mediaTablet {
-      img {
+      .slow {
+        height: 45%;
+      }
+      .fast,
+      .normal {
         height: 55%;
       }
     }

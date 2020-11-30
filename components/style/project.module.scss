@@ -33,6 +33,7 @@
       transition: transform 400ms ease-out;
       width: auto;
       object-fit: contain;
+      margin: 0 $mn/10;
       margin-bottom: 3%;
     }
     .fast {
@@ -135,11 +136,19 @@
   grid-column: span 2;
   //   margin-top: 20px;
   .imageContainer {
-    img {
+    // img {
+    .slow {
+      height: 40%;
+    }
+    .fast {
       height: 45%;
     }
+    // }
     @include mediaTablet {
-      img {
+      .slow {
+        height: 45%;
+      }
+      .fast {
         height: 55%;
       }
     }

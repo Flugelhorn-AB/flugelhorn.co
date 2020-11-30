@@ -29,6 +29,7 @@
                bottom: 0px;
                align-self: flex-start;
                @include mediaTablet {
+                    background: none;
                     top: 12px;
                     padding-top: 0;
                }

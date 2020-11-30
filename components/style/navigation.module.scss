@@ -214,8 +214,9 @@
 }
 
 .navNotOnTop {
-     background-color: rgba(255, 255, 255, 0.6);
+     background-color: rgba(255, 255, 255, 0.9);
      transition: all 0.5s;
+
      backdrop-filter: blur(15px);
      .navigationContent {
           a {

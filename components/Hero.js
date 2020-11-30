@@ -74,12 +74,6 @@ const Hero = () => {
                text: 'Flugelhorn Digital Agency ↗',
                subText: 'we create solutions for the new world',
           },
-          {
-               emoji: '🌍',
-               page: '/about',
-               text: 'Location independent digital agency ↗',
-               subText: 'currently in: Mexico',
-          },
      ];
 
      useEffect(() => {
@@ -112,7 +106,6 @@ const Hero = () => {
                          }%) perspective(${x / 100000}px)`,
                     }}
                >
-                    {/* <h2>{randomQuote.emoji}</h2> */}
                     <Link href={randomQuote.page}>
                          <a>
                               <h1>{randomQuote.text}</h1>

@@ -56,7 +56,7 @@ const Hero = () => {
           },
           {
                emoji: '👾',
-               page: '/work',
+               page: '/#work',
                text: 'Check out our previous projects ↗',
           },
           {

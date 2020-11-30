@@ -42,6 +42,7 @@ const Project = ({ details }) => {
 
                <AnimatePresence exitBeforeEnter>
                     <motion.div
+                         style={{ width: '100%' }}
                          transition={{ duration: 0.5 }}
                          exit={{ backgroundColor: 'white', opacity: 0 }}
                          initial={{ opacity: 0 }}

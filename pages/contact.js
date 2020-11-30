@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import ProjectHero from '../components/ProjectHero';
 import style from './style/contact.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
+import Footer from '../components/Footer';
 
 const Contact = () => {
      return (
@@ -78,6 +79,7 @@ const Contact = () => {
                                    </a>
                               </p>
                          </AboutBlock>
+                         <Footer />
                     </motion.div>
                </AnimatePresence>
           </div>

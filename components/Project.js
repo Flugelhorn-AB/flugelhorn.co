@@ -8,10 +8,33 @@ const Project = ({ details }) => {
   return (
     <div className={`${style.project} ${style[details.projectSize]}`}>
       <div className={style.imageContainer}>
-        <img
+        {/* <img
           src={`${details.cardImage.url}`}
           alt={details.cardImage.alternativeText}
         />
+        <img
+          src={`${details.cardImage.url}`}
+          alt={details.cardImage.alternativeText}
+        /> */}
+        {details.cardPicture.map((pic) => {
+          return (
+            <img
+              src={pic.image.url}
+              className={style[pic.speed]}
+              alt={pic.image.alternativeText}
+            />
+          );
+        })}
+        {/* <img
+          className={style.fast}
+          src="/octo-bog.png"
+          alt={details.cardImage.alternativeText}
+        />
+        <img
+          className={style.slow}
+          src="/octo-tiny.png"
+          alt={details.cardImage.alternativeText}
+        /> */}
       </div>
       <div
         className={`${style.info} ${

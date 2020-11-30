@@ -9,8 +9,6 @@ const Hero = () => {
      const [randomQuote, setRandomQuote] = useState({ page: '/' });
      const { x, y } = useMousePosition();
 
-     const heroText = useRef();
-
      const handleScroll = () => {
           setOffset(window.pageYOffset);
      };
@@ -79,9 +77,7 @@ const Hero = () => {
      ];
 
      useEffect(() => {
-          document.addEventListener('mousemove', () => {
-               console.log();
-          });
+          document.addEventListener('mousemove', () => {});
      }, []);
 
      useEffect(() => {
@@ -103,7 +99,6 @@ const Hero = () => {
                className={style.hero}
           >
                <div
-                    ref={heroText}
                     className={style.text}
                     style={{
                          transform: `translate(-${x / 500}%, -${
@@ -117,6 +112,7 @@ const Hero = () => {
                               <h1>{randomQuote.text}</h1>
                          </a>
                     </Link>
+
                     <p>tellus based digital agency</p>
                </div>
           </div>

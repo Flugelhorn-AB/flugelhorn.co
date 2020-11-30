@@ -48,31 +48,37 @@ const Hero = () => {
                emoji: '🛠',
                page: '/contact',
                text: 'Work with us ↗',
+               subText: 'tellus based digital agency',
           },
           {
                emoji: '📚 ',
                page: '/blog',
-               text: 'Check out our blog section ↗',
+               text: 'Have you seen our blog section? ↗',
+               subText: 'tellus based digital agency',
           },
           {
                emoji: '👾',
-               page: '/work',
-               text: 'Check out our previous projects ↗',
+               page: '/#work',
+               text: 'Take a look at previous projects ↗',
+               subText: 'tellus based digital agency',
           },
           {
                emoji: '👋',
                page: '/contact',
                text: "Don't be a stranger, say hi ↗",
+               subText: 'tellus based digital agency',
           },
           {
                emoji: '📯',
                page: '/about',
                text: 'Flugelhorn Digital Agency ↗',
+               subText: 'we create solutions for the new world',
           },
           {
                emoji: '🌍',
                page: '/about',
                text: 'Location independent digital agency ↗',
+               subText: 'currently in: Mexico',
           },
      ];
 
@@ -112,8 +118,7 @@ const Hero = () => {
                               <h1>{randomQuote.text}</h1>
                          </a>
                     </Link>
-
-                    <p>tellus based digital agency</p>
+                    <p>{randomQuote.subText}</p>
                </div>
           </div>
      );

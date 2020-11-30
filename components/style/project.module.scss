@@ -37,6 +37,7 @@
       transition: transform 800ms ease-out;
       width: auto;
       object-fit: contain;
+      margin: 0 $mn/10;
       margin-bottom: 3%;
     }
     .normal {
@@ -70,6 +71,7 @@
       display: block;
       margin-top: $mn/4;
       color: #00f;
+      z-index: 1000;
     }
   }
 
@@ -151,6 +153,7 @@
     .normal {
       height: 45%;
     }
+    // }
     @include mediaTablet {
       .slow {
         height: 45%;

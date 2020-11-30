@@ -2,7 +2,6 @@ import Project from './Project';
 import style from './style/projectGallery.module.scss';
 
 const ProjectGallery = ({ projects }) => {
-     console.log(projects);
      return (
           <div className={style.projectGallery}>
                <div className={style.content}>

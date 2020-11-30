@@ -28,7 +28,6 @@ const Project = ({ details }) => {
      const handleScroll = () => {
           if (video.current && window.pageYOffset > 200) {
                video.current.play();
-               console.log('scroll');
           }
      };
 
@@ -42,6 +41,7 @@ const Project = ({ details }) => {
 
                <AnimatePresence exitBeforeEnter>
                     <motion.div
+                         style={{ width: '100%' }}
                          transition={{ duration: 0.5 }}
                          exit={{ backgroundColor: 'white', opacity: 0 }}
                          initial={{ opacity: 0 }}

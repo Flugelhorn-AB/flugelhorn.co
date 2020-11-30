@@ -24,7 +24,7 @@ const Contact = () => {
                          animate={{ opacity: 1 }}
                     >
                          <Navigation />
-                         <ProjectHero img="/mexico-1-.jpeg" />
+                         <ProjectHero img="/mexico.JPG" />
                          <AboutBlock title="Contact us">
                               <a href="mailto:contact@flugelhorn.co">
                                    <p>contact@flugelhorn.co ↗</p>

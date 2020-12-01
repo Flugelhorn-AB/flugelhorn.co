@@ -157,12 +157,14 @@ const Navigation = () => {
                </a>
                <div
                     className={`${style.navigationContentMobile} ${
-                         !menuExpanded && !isRouteChanging
-                              ? style.compressed
-                              : style.expanded
+                         menuExpanded
+                              ? style.expanded
+                              : isRouteChanging && menuExpanded
+                              ? style.expanded
+                              : style.compressed
                     }`}
                >
-                    <Link href="/#work">
+                    <Link onClick={menuExpandedFalse} href="/#work">
                          <a className={style.mobileItem}>Work</a>
                     </Link>
                     <Link href="/blog">

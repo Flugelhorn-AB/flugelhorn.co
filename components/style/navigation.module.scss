@@ -127,6 +127,7 @@
                font-size: 20px;
                text-align: left;
                margin-top: auto;
+               -webkit-tap-highlight-color: transparent;
                // transition: color 50ms linear;
                &:hover {
                     // color: red;

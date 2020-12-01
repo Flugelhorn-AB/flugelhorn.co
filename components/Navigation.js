@@ -2,6 +2,9 @@ import style from './style/navigation.module.scss';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import Footer from './Footer';
+import { useContext } from 'react';
+import NavContext from './NavContext.js';
+
 const Navigation = () => {
      const nav = useRef();
      const [menuExpanded, setMenuExpanded] = useState(false);
@@ -10,11 +13,15 @@ const Navigation = () => {
      const [offset, setOffset] = useState(0);
      const [menuUnderlay, setMenuUnderlay] = useState(false);
 
+     const { isRouteChanging } = useContext(NavContext);
+
+     const setWidth = () => {
+          setWindowWidth(window.innerWidth);
+     };
+
      if (typeof window !== 'undefined') {
           useEffect(() => {
-               window.addEventListener('resize', () =>
-                    setWindowWidth(window.innerWidth)
-               );
+               window.addEventListener('resize', setWidth);
                if (windowWidth >= 735) {
                     setMenuExpanded(false);
                     setIsMobile(false);
@@ -22,6 +29,10 @@ const Navigation = () => {
                if (windowWidth < 735) {
                     setIsMobile(true);
                }
+
+               return () => {
+                    window.addEventListener('resize', setWidth);
+               };
           }, [windowWidth]);
      }
 
@@ -75,6 +86,9 @@ const Navigation = () => {
 
      useEffect(() => {
           window.addEventListener('scroll', navHandler, false);
+          return () => {
+               window.removeEventListener('scroll', navHandler, false);
+          };
      }, []);
 
      const handleScroll = async () => {
@@ -86,6 +100,10 @@ const Navigation = () => {
                return !prev;
           });
           navHandler(false);
+     };
+
+     const menuExpandedFalse = () => {
+          setMenuExpanded(false);
      };
 
      let colorOffset = 255 - offset * 1000;
@@ -139,7 +157,9 @@ const Navigation = () => {
                </a>
                <div
                     className={`${style.navigationContentMobile} ${
-                         menuExpanded ? style.expanded : style.compressed
+                         !menuExpanded && !isRouteChanging
+                              ? style.compressed
+                              : style.expanded
                     }`}
                >
                     <Link href="/#work">

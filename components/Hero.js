@@ -31,16 +31,16 @@ const Hero = () => {
      }, []);
 
      const colorArray = [
-          '#d4d83e',
-          '#e89cd8',
-          '#7de055',
-          '#86baf1',
-          '#eea663',
-          '#53dce3',
-          '#d5ca72',
-          '#73ddc0',
-          '#aad987',
-          '#5be09f',
+          '#7dd8e6',
+          '#95e556',
+          '#e8b2d3',
+          '#e3ce68',
+          '#94e2a8',
+          '#d345ff',
+          '#587600',
+          '#ffc9ff',
+          '#002400',
+          '#ff524d',
      ];
 
      const quoteArray = [
@@ -56,7 +56,7 @@ const Hero = () => {
           },
           {
                emoji: '👾',
-               page: '/work',
+               page: '/#work',
                text: 'Check out our previous projects ↗',
           },
           {
@@ -75,10 +75,6 @@ const Hero = () => {
                text: 'Location independent digital agency ↗',
           },
      ];
-
-     useEffect(() => {
-          document.addEventListener('mousemove', () => {});
-     }, []);
 
      useEffect(() => {
           setRandomColor(

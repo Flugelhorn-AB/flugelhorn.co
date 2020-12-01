@@ -7,10 +7,15 @@ const Project = ({ details }) => {
      return (
           <div className={`${style.project} ${style[details.projectSize]}`}>
                <div className={style.imageContainer}>
-                    <img
-                         src={`${details.cardImage.url}`}
-                         alt={details.cardImage.alternativeText}
-                    />
+                    {details.cardPicture.map((pic) => {
+                         return (
+                              <img
+                                   src={pic.image.url}
+                                   className={style[pic.speed]}
+                                   alt={pic.image.alternativeText}
+                              />
+                         );
+                    })}
                </div>
                <div
                     className={`${style.info} ${

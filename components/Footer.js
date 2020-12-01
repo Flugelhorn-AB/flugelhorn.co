@@ -9,11 +9,14 @@ const Footer = () => {
                          {/* Flugelhorn Digital Agency */}
                     </div>
                     <div className={style.details}>
-                         <Link href="/about">
-                              <a>About</a>
+                         <Link href="/#work">
+                              <a>Work</a>
                          </Link>
                          <Link href="/blog">
                               <a>Blog</a>
+                         </Link>
+                         <Link href="/about">
+                              <a>About</a>
                          </Link>
                          <Link href="/contact">
                               <a>Contact</a>

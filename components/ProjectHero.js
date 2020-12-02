@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 
 const ProjectHero = ({ img, isWork }) => {
      const [offset, setOffset] = useState();
-     const overlay = useRef();
 
      const handleScroll = () => {
           setOffset(window.pageYOffset);

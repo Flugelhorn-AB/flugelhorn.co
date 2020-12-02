@@ -33,7 +33,6 @@
      justify-content: center;
      position: sticky;
      top: 0;
-     background: rgb(0, 180, 219);
 
      h1 {
           @include logoFont;
@@ -59,11 +58,6 @@
      }
 }
 .workHero {
-     background: linear-gradient(
-          107deg,
-          rgba(0, 180, 219, 1) 0%,
-          rgba(0, 131, 176, 1) 100%
-     );
      width: 100%;
      img {
           height: 80%;

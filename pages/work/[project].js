@@ -91,7 +91,7 @@ const Project = ({ details }) => {
 
           <AboutBlock title="How we worked">
             {details.howWeWorked.map((step) => {
-              const paragraphs = step.text.split("</br>");
+              const paragraphs = step.text.split("<br>");
               return (
                 <div key={step.id} className={style.step}>
                   {paragraphs.map((p, i) => {
@@ -105,7 +105,7 @@ const Project = ({ details }) => {
 
           <AboutBlock title="What we did">
             {details.whatWeDid.map((step) => {
-              const paragraphs = step.text.split("</br>");
+              const paragraphs = step.text.split("<br>");
 
               return (
                 <div key={step.id} className={style.step}>

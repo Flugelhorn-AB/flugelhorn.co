@@ -8,13 +8,6 @@ const ProjectHero = ({ img, isWork }) => {
     setOffset(window.pageYOffset);
   };
 
-  //  useEffect(() => {
-  //     if (window.pageYOffset > 700){
-  //         hideOverlay()
-  //     } else {showOverlay()}
-
-  //  },[window.pageYOffset])
-
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
     return () => {
@@ -32,7 +25,15 @@ const ProjectHero = ({ img, isWork }) => {
         isWork ? style.workHero : style.aboutHero
       }`}
     >
-      {img ? <img src={img} /> : ""}
+      {isWork ? (
+        img.map((img, i) => {
+          return <img src={img.image.url} key={i} />;
+        })
+      ) : img ? (
+        <img src={img} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

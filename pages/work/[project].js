@@ -13,8 +13,7 @@ const Project = ({ details }) => {
   // const {project: {details}} = props
 
   const video = useRef();
-
-  const coverImg = details.cardImage.url;
+  console.log(details);
 
   useEffect(() => {
     setTimeout(() => {
@@ -49,7 +48,7 @@ const Project = ({ details }) => {
         >
           <Navigation />
 
-          <ProjectHero img={coverImg} isWork={true} />
+          <ProjectHero img={details.cardPicture} isWork={true} />
 
           <AboutBlock title={details.name}>
             <h2 className={style.tags}>{details.tags}</h2>
@@ -61,8 +60,9 @@ const Project = ({ details }) => {
                   className={style.introVideo}
                   muted
                   loop
-                  poster="true"
+                  preload
                   playsInline
+                  poster={details.cardImage.url}
                 >
                   <source src={details.introImage.url} />
                 </video>

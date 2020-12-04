@@ -48,7 +48,11 @@ const Project = ({ details }) => {
         >
           <Navigation />
 
-          <ProjectHero img={details.cardPicture} isWork={true} />
+          <ProjectHero
+            img={details.cardPicture}
+            isWork={true}
+            gradient={details.gradientColor}
+          />
 
           <AboutBlock title={details.name}>
             <h2 className={style.tags}>{details.tags}</h2>
@@ -60,7 +64,7 @@ const Project = ({ details }) => {
                   className={style.introVideo}
                   muted
                   loop
-                  preload
+                  // preload
                   playsInline
                   poster={details.cardImage.url}
                 >
@@ -109,7 +113,10 @@ const Project = ({ details }) => {
 
               return (
                 <div key={step.id} className={style.step}>
-                  <p>{step.text}</p>
+                  {paragraphs.map((p, i) => {
+                    return <p key={i}>{p}</p>;
+                  })}
+                  {step.image ? <img src={step.image.url} /> : " "}
                 </div>
               );
             })}

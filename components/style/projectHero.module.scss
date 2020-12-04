@@ -10,7 +10,6 @@
   position: sticky;
   top: 0;
 
-  background: #ccf;
   h1 {
     @include logoFont;
     font-size: 100px;
@@ -36,8 +35,18 @@
   }
   @include mediaTablet {
     img {
+      // transform: rotate(90deg);
       padding: 0 $mn/3;
       margin-bottom: $mn/2;
+      // animation: swim linear 15000ms infinite;
+    }
+    @keyframes swim {
+      0% {
+        transform: translateX(-70vw) rotate(90deg);
+      }
+      100% {
+        transform: translateX(70vw) rotate(90deg);
+      }
     }
   }
 }

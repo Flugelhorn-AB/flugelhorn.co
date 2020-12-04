@@ -1,7 +1,7 @@
 import style from "./style/projectHero.module.scss";
 import { useEffect, useRef, useState } from "react";
 
-const ProjectHero = ({ img, isWork }) => {
+const ProjectHero = ({ img, isWork, gradient }) => {
   const [offset, setOffset] = useState(0);
 
   const handleScroll = () => {
@@ -20,6 +20,7 @@ const ProjectHero = ({ img, isWork }) => {
       style={{
         transform: `translateY(-${offset * 0.6}px)`,
         opacity: 1 - offset * 0.002,
+        background: `linear-gradient(${gradient} 0%, #fff 60%, #fff)`,
       }}
       className={`${style.projectHero} ${
         isWork ? style.workHero : style.aboutHero

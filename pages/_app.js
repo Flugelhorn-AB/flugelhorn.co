@@ -14,20 +14,9 @@ function MyApp({ Component, pageProps, router }) {
 
      return (
           <div>
-               <AnimatePresence initial={false} exitBeforeEnter>
-                    <motion.div
-                         style={{ zIndex: '0' }}
-                         key={router.route}
-                         transition={{ duration: 0.5 }}
-                         exit={{ backgroundColor: 'white', opacity: 0 }}
-                         initial={{ opacity: 0 }}
-                         animate={{ opacity: 1 }}
-                    >
-                         <NavContext.Provider value={{ isRouteChanging }}>
-                              <Component {...pageProps} />
-                         </NavContext.Provider>
-                    </motion.div>
-               </AnimatePresence>
+               <NavContext.Provider value={{ isRouteChanging }}>
+                    <Component {...pageProps} />
+               </NavContext.Provider>
           </div>
      );
 }

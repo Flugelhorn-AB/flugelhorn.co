@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Footer from './Footer';
 import { useContext } from 'react';
 import NavContext from './NavContext.js';
+import { Router } from 'next/router';
 
 const Navigation = () => {
      const nav = useRef();
@@ -102,7 +103,10 @@ const Navigation = () => {
           navHandler(false);
      };
 
-     const menuExpandedFalse = () => {
+     const menuExpandedFalse = (e) => {
+          e.preventDefault();
+          console.log('false');
+          Router.router.push({ pathname: '/#work' });
           setMenuExpanded(false);
      };
 
@@ -164,9 +168,12 @@ const Navigation = () => {
                               : style.compressed
                     }`}
                >
-                    <Link onClick={menuExpandedFalse} href="/#work">
-                         <a className={style.mobileItem}>Work</a>
-                    </Link>
+                    <a
+                         onClick={handleMenuExpanded}
+                         className={style.mobileItem}
+                    >
+                         Work
+                    </a>
                     <Link href="/blog">
                          <a className={style.mobileItem}>Blog</a>
                     </Link>

@@ -13,8 +13,7 @@ const Project = ({ details }) => {
   // const {project: {details}} = props
 
   const video = useRef();
-
-  const coverImg = details.cardImage.url;
+  console.log(details);
 
   useEffect(() => {
     setTimeout(() => {
@@ -49,7 +48,11 @@ const Project = ({ details }) => {
         >
           <Navigation />
 
-          <ProjectHero img={coverImg} isWork={true} />
+          <ProjectHero
+            img={details.cardPicture}
+            isWork={true}
+            gradient={details.gradientColor}
+          />
 
           <AboutBlock title={details.name}>
             <h2 className={style.tags}>{details.tags}</h2>
@@ -61,8 +64,9 @@ const Project = ({ details }) => {
                   className={style.introVideo}
                   muted
                   loop
-                  poster
+                  // preload
                   playsInline
+                  poster={details.cardImage.url}
                 >
                   <source src={details.introImage.url} />
                 </video>
@@ -91,7 +95,7 @@ const Project = ({ details }) => {
 
           <AboutBlock title="How we worked">
             {details.howWeWorked.map((step) => {
-              const paragraphs = step.text.split("<br/>");
+              const paragraphs = step.text.split("<br>");
               return (
                 <div key={step.id} className={style.step}>
                   {paragraphs.map((p, i) => {
@@ -105,9 +109,14 @@ const Project = ({ details }) => {
 
           <AboutBlock title="What we did">
             {details.whatWeDid.map((step) => {
+              const paragraphs = step.text.split("<br>");
+
               return (
                 <div key={step.id} className={style.step}>
-                  <p>{step.text}</p>
+                  {paragraphs.map((p, i) => {
+                    return <p key={i}>{p}</p>;
+                  })}
+                  {step.image ? <img src={step.image.url} /> : " "}
                 </div>
               );
             })}

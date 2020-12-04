@@ -4,31 +4,6 @@
      width: 100%;
      height: 55vh;
      display: flex;
-     background: black;
-     align-items: flex-end;
-     justify-content: center;
-     position: sticky;
-     top: 0;
-     background: $white101;
-     // img {
-     //   // width: 100%;
-     //   height: 80%;
-     //   width: 100%;
-     //   margin-bottom: $mn/6;
-     //   object-fit: cover;
-     //   position: absolute;
-     // }
-     h1 {
-          @include logoFont;
-          font-size: 100px;
-          color: white;
-     }
-     .overlay {
-          background: $white101;
-     }
-
-     display: flex;
-
      align-items: flex-end;
      justify-content: center;
      position: sticky;
@@ -38,16 +13,6 @@
           @include logoFont;
           font-size: 100px;
           color: white;
-     }
-     .overlay {
-          background: $white101;
-
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          position: absolute;
-          opacity: 0;
      }
 
      @include mediaTablet {
@@ -59,16 +24,28 @@
 }
 .workHero {
      width: 100%;
+     padding: 0 $mn/3;
      img {
+          box-sizing: border-box;
           height: 80%;
-          margin-bottom: $mn/6;
+          max-width: 50%;
+          margin-bottom: $mn/3;
           object-fit: contain;
-          position: absolute;
      }
      @include mediaTablet {
           img {
-               margin-left: -$mn * 3.5;
+               // transform: rotate(90deg);
+               padding: 0 $mn/3;
                margin-bottom: $mn/2;
+               // animation: swim linear 15000ms infinite;
+          }
+          @keyframes swim {
+               0% {
+                    transform: translateX(-70vw) rotate(90deg);
+               }
+               100% {
+                    transform: translateX(70vw) rotate(90deg);
+               }
           }
      }
 }

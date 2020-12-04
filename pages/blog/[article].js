@@ -6,6 +6,7 @@ import style from './article.module.scss';
 import Head from '../../components/head';
 import Prism from 'prismjs';
 import { motion, AnimatePresence } from 'framer-motion';
+import Footer from '../../components/Footer';
 
 var md = require('markdown-it')();
 
@@ -149,6 +150,7 @@ const Article = ({ article }) => {
                                    ref={content}
                               ></div>
                          </main>
+                         <Footer />
                     </motion.div>
                </AnimatePresence>
           </div>

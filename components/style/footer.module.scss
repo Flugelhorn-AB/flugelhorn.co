@@ -10,6 +10,7 @@
      flex-wrap: wrap;
      padding: 10px 0;
      padding-top: 50px;
+
      justify-items: center;
      justify-self: flex-end;
      @include mediaDesktop {
@@ -25,23 +26,12 @@
           justify-items: center;
           align-items: center;
      }
-     .flugelhorn {
-          width: 100%;
-          padding: 0px;
-          @include textArticleParagraph;
-          color: $gray101;
-          a {
-               &:hover {
-                    color: $gray102;
-               }
-          }
-          @include mediaDesktop {
-          }
-     }
+
      .details,
      .socialMedia {
           width: 50%;
           display: flex;
+          padding-bottom: 10px;
           flex-direction: column;
           @include textArticleParagraph;
           margin: 0;
@@ -79,16 +69,16 @@
           }
      }
      .copyright {
+          padding-top: 10px;
           width: 100%;
           height: auto;
           @include textArticleParagraph;
           font-size: 14px;
           color: $gray101;
-
+          background: $white102;
+          padding-bottom: $mn/6;
           @include mediaTablet {
                padding-bottom: $mn/4;
-
-               margin-top: 5px;
           }
      }
      a {
@@ -112,7 +102,6 @@
      }
 
      .divider {
-          margin: 20px 0 10px 0;
           position: relative;
           width: 100%;
           height: 1px;

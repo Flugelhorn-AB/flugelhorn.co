@@ -13,7 +13,7 @@ const Contact = () => {
         title="Contact | Flugelhorn Digital Web Agency"
         description="
         Information about how you can contact us and where you can visit us."
-        image="/flugel-fam.png"
+        image="/mexico.jpeg"
       />
       <AnimatePresence exitBeforeEnter>
         <motion.div
@@ -24,7 +24,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
         >
           <Navigation />
-          <ProjectHero img="/mexico.JPG" />
+          <ProjectHero img="/mexico.jpeg" />
           <AboutBlock title="Contact us">
             <a href="mailto:contact@flugelhorn.co">
               <p>contact@flugelhorn.co ↗</p>

@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import ProjectHero from '../components/ProjectHero';
 import style from './style/about.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const About = () => {
      return (
@@ -119,7 +120,10 @@ const About = () => {
                               <br />
                               <br />
                               <div>
-                                   <img
+                                   <Image
+                                        width={1000}
+                                        height={1200}
+                                        layout={'responsive'}
                                         src="/about/san-cristobal-street.jpg"
                                         alt="San Cristóbal street"
                                    />

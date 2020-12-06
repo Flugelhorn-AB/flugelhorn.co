@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { url } from '../utils/fetcher';
-
 import style from './style/project.module.scss';
+import Image from 'next/image';
 
 const Project = ({ details }) => {
      return (

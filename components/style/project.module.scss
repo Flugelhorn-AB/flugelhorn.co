@@ -33,7 +33,8 @@
           display: flex;
           justify-content: center;
           align-items: flex-end;
-          img {
+          img,
+          Image {
                transition: transform 800ms ease-out;
                width: auto;
                object-fit: contain;

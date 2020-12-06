@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { url } from "../utils/fetcher";
 import style from "./style/project.module.scss";
-// import Image from 'next/image';
 
 const Project = ({ details }) => {
   return (
@@ -24,7 +23,6 @@ const Project = ({ details }) => {
       >
         <h2 className={style.name}>{details.name}</h2>
         <p className={style.tags}>{details.tags}</p>
-        {/* <p className={style.intro}>{details.intro}</p> */}
         <Link href={`/work/${details.name}`}>
           <a className={style.link}>Read more ↗</a>
         </Link>

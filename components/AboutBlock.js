@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import style from "./style/aboutBlock.module.scss";
 
 const AboutBlock = ({ title, children }) => {
-
-
   return (
     <div className={style.aboutBlock}>
       <div className={style.content}>

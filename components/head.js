@@ -38,7 +38,10 @@ const Head = (props) => {
       {props.image ? (
         <meta property="og:image" content={`${props.image}`} />
       ) : (
-        <meta property="og:image" content="/flugel-fam.png" />
+        <meta
+          property="og:image"
+          content="https://flugelhorn.co/flugel-fam.png"
+        />
       )}
       <link rel="apple-touch-icon" sizes="180x180" href="#" />
       <link

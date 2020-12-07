@@ -1,5 +1,6 @@
 @import "../../base/index.scss";
 .link {
+  width: calc(50% - 20px);
   .blogCard {
     //   background-color: red;
     display: flex;
@@ -34,7 +35,7 @@
     }
 
     @include mediaTablet {
-      max-width: 50%;
+      // max-width: calc(100% - 10px);
       .imageContainer {
         width: 14vw;
         height: 14vw;

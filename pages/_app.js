@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Router from 'next/router';
 import NavContext from '../components/NavContext.js';
 import { useState } from 'react';
+import Loader from '../components/Loader';
 
 function MyApp({ Component, pageProps, router }) {
      const [isRouteChanging, setIsRouteChanging] = useState(false);
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps, router }) {
      return (
           <div>
                <NavContext.Provider value={{ isRouteChanging }}>
+                    {isRouteChanging ? <Loader /> : ''}
                     <Component {...pageProps} />
                </NavContext.Provider>
           </div>

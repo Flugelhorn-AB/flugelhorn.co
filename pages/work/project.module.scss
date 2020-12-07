@@ -16,6 +16,9 @@
                position: relative;
                transition: all 250ms ease;
                cursor: pointer;
+               img {
+                    cursor: pointer;
+               }
           }
      }
 

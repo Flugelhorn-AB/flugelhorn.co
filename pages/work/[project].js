@@ -11,17 +11,45 @@ import Image from 'next/image';
 
 const Project = ({ details }) => {
      // const {project: {details}} = props
-     const [enlargeImage, setEnlargeImage] = useState();
+     let enlargeImage = false;
+     const [imageEnlarged, setImageEnlarged] = useState(false);
+     const [windowWidth, setWindowWidth] = useState();
+     const [isMobile, setIsMobile] = useState();
 
-     const handleIntroImgClicked = () => {};
-     const handleHWWClick = () => {
-          howWeWorkedImage.current.style.width = '200%';
+     const setWidth = () => {
+          setWindowWidth(window.innerWidth);
      };
-     const handleWWDClick = () => {};
 
-     const introImage = useRef();
-     const howWeWorkedImage = useRef();
-     const whatWeDidImage = useRef();
+     if (typeof window !== 'undefined') {
+          useEffect(() => {
+               window.addEventListener('resize', setWidth);
+               if (windowWidth >= 735) {
+                    setIsMobile(false);
+               }
+               if (windowWidth < 735) {
+                    setIsMobile(true);
+               }
+
+               return () => {
+                    window.addEventListener('resize', setWidth);
+               };
+          }, [windowWidth]);
+     }
+
+     useEffect(() => {
+          setWindowWidth(window.innerWidth);
+     }, []);
+
+     const handleImageSize = async (e) => {
+          enlargeImage = !enlargeImage;
+          if (enlargeImage && isMobile === false) {
+               e.currentTarget.style.transform = 'translateX(-50%)';
+               e.currentTarget.style.width = '200%';
+          } else {
+               e.currentTarget.style.transform = 'translateX(0%)';
+               e.currentTarget.style.width = '100%';
+          }
+     };
 
      const video = useRef();
 
@@ -68,7 +96,10 @@ const Project = ({ details }) => {
                               <h2 className={style.tags}>{details.tags}</h2>
                               <p className={style.intro}>{details.intro}</p>
                               {details.introImage.ext === '.mp4' ? (
-                                   <div>
+                                   <div
+                                        onClick={handleImageSize}
+                                        className={style.imageContainer}
+                                   >
                                         <video
                                              ref={video}
                                              className={style.introVideo}
@@ -84,15 +115,16 @@ const Project = ({ details }) => {
                                         </video>
                                    </div>
                               ) : (
-                                   <div>
+                                   <div
+                                        className={style.imageContainer}
+                                        onClick={handleImageSize}
+                                   >
                                         <Image
                                              width={details.introImage.width}
                                              height={details.introImage.height}
                                              layout={'responsive'}
                                              src={details.introImage.url}
                                              alt=""
-                                             ref={introImage}
-                                             onClick={handleIntroImgClicked}
                                         />
                                    </div>
                               )}
@@ -132,18 +164,30 @@ const Project = ({ details }) => {
                                                   }}
                                              />
                                              {step.image[0] ? (
-                                                  <Image
-                                                       width={
-                                                            step.image[0].width
+                                                  <div
+                                                       className={
+                                                            style.imageContainer
                                                        }
-                                                       height={
-                                                            step.image[0].height
-                                                       }
-                                                       layout={'responsive'}
-                                                       ref={howWeWorkedImage}
-                                                       src={step.image[0].url}
-                                                       onClick={handleHWWClick}
-                                                  />
+                                                       onClick={handleImageSize}
+                                                  >
+                                                       <Image
+                                                            width={
+                                                                 step.image[0]
+                                                                      .width
+                                                            }
+                                                            height={
+                                                                 step.image[0]
+                                                                      .height
+                                                            }
+                                                            layout={
+                                                                 'responsive'
+                                                            }
+                                                            src={
+                                                                 step.image[0]
+                                                                      .url
+                                                            }
+                                                       />
+                                                  </div>
                                              ) : (
                                                   ' '
                                              )}
@@ -165,16 +209,22 @@ const Project = ({ details }) => {
                                                   }}
                                              />
                                              {step.image ? (
-                                                  <Image
-                                                       width={step.image.width}
-                                                       height={
-                                                            step.image.height
+                                                  <div
+                                                       className={
+                                                            style.imageContainer
                                                        }
-                                                       layout={'responsive'}
-                                                       ref={whatWeDidImage}
-                                                       src={step.image.url}
-                                                       onClick={handleWWDClick}
-                                                  />
+                                                       onClick={handleImageSize}
+                                                  >
+                                                       {' '}
+                                                       <Image
+                                                            layout={
+                                                                 'responsive'
+                                                            }
+                                                            height={700}
+                                                            width={1200}
+                                                            src={step.image.url}
+                                                       />
+                                                  </div>
                                              ) : (
                                                   ' '
                                              )}

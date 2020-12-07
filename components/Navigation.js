@@ -102,12 +102,12 @@ const Navigation = () => {
       return !prev;
     });
     navHandler(false);
+    //     Router.router.push({ pathname: "/#work" });
   };
 
   const menuExpandedFalse = (e) => {
     e.preventDefault();
-    console.log("false");
-    Router.router.push({ pathname: "/#work" });
+    Router.router.push({ pathname: "/#work" }, "/#work");
     setMenuExpanded(false);
   };
 
@@ -165,7 +165,7 @@ const Navigation = () => {
             : style.compressed
         }`}
       >
-        <a onClick={handleMenuExpanded} className={style.mobileItem}>
+        <a onClick={menuExpandedFalse} className={style.mobileItem}>
           Work
         </a>
         <Link href="/blog">

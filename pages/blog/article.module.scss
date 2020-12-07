@@ -1,95 +1,103 @@
-@import '../../base/index.scss';
+@import "../../base/index.scss";
 .article {
-     margin-top: $mn * 1.5;
+  margin-top: $mn * 1.5;
 
-     .navigationUnderlay {
+  .navigationUnderlay {
+    width: 100%;
+    height: 60px;
+    background: $red;
+    position: absolute;
+    top: 0;
+    @include mediaTablet {
+      height: 80px;
+    }
+  }
+
+  .main {
+    @include articleContent;
+
+    .intro {
+      padding-bottom: $mn/2;
+      .title {
+        width: 100%;
+
+        @include headlineL;
+        padding-bottom: $mn/4;
+        @include mediaTablet {
+          margin-top: $mn * 2;
+        }
+      }
+      .date {
+        color: $gray101;
+        @include textM;
+        margin-bottom: $mn/6;
+      }
+
+      .shareIcons {
+        display: flex;
+        // justify-content: flex-end;
+        margin-bottom: $mn/4;
+        margin-left: -4px;
+
+        a {
+          display: block;
+          .icon {
+            margin-right: $mn/6;
+            fill: $gray101;
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+
+      .imageContainer {
+        width: 100%;
+        height: 30vh;
+        overflow: hidden;
+        img {
+          object-fit: cover;
           width: 100%;
-          height: 60px;
-          background: $red;
-          position: absolute;
-          top: 0;
+          height: 100%;
+        }
+        @include mediaTablet {
+          height: 430px;
+        }
+      }
+    }
+    .content {
+      padding-bottom: $mn;
+      h2 {
+        padding: $mn/2 0 $mn/6 0;
+        @include subHeadlineL;
+        font-weight: 700;
+      }
+      p {
+        @include textArticleParagraph;
+
+        padding: $mn/10 0;
+      }
+
+      blockquote {
+        margin: $mn/4 0;
+        p {
+          font-style: italic;
+          @include logoFont;
+          margin-left: $mn/2;
+          font-weight: 300;
           @include mediaTablet {
-               height: 80px;
+            @include logoFont;
+            margin-left: $mn * 1.2;
           }
-     }
+        }
+      }
+      img {
+        width: 100%;
+        margin: $mn/4 0;
+      }
 
-     .main {
-          @include articleContent;
-
-          .intro {
-               padding-bottom: $mn/2;
-               .title {
-                    width: 90%;
-                    @include headlineL;
-                    padding-bottom: $mn/4;
-               }
-               .date {
-                    color: $gray101;
-                    @include textM;
-                    margin-bottom: $mn/6;
-               }
-
-               .shareIcons {
-                    display: flex;
-                    // justify-content: flex-end;
-                    margin-bottom: $mn/4;
-                    margin-left: -4px;
-
-                    a {
-                         display: block;
-                         .icon {
-                              margin-right: $mn/6;
-                              fill: $gray101;
-                              width: 35px;
-                              height: 35px;
-                         }
-                    }
-               }
-
-               .imageContainer {
-                    width: 100%;
-                    height: 30vh;
-                    overflow: hidden;
-                    img {
-                         object-fit: cover;
-                         width: 100%;
-                         height: 100%;
-                    }
-                    @include mediaTablet {
-                         height: 430px;
-                    }
-               }
-          }
-          .content {
-               padding-bottom: $mn;
-               h2 {
-                    padding: $mn/2 0 $mn/6 0;
-                    @include subHeadlineL;
-                    font-weight: 700;
-               }
-               p {
-                    @include textArticleParagraph;
-
-                    padding: $mn/10 0;
-               }
-
-               blockquote {
-                    margin: $mn/4 0;
-                    p {
-                         font-style: italic;
-                         @include logoFont;
-                         margin-left: $mn/2;
-                         font-weight: 300;
-                         @include mediaTablet {
-                              @include logoFont;
-                              margin-left: $mn * 1.2;
-                         }
-                    }
-               }
-
-               code {
-                    // @include textArticleParagraph;
-               }
-          }
-     }
+      code {
+        // @include textArticleParagraph;
+      }
+    }
+  }
 }

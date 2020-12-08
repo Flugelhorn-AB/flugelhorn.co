@@ -24,11 +24,8 @@ const Contact = () => {
                          animate={{ opacity: 1 }}
                     >
                          <Navigation />
-                         {<ProjectHero img="/mexico.JPG" /> ? (
-                              <ProjectHero img="/mexico.JPG" />
-                         ) : (
-                              <Skeleton height={'55vh'} />
-                         )}
+
+                         <ProjectHero img="/mexico.JPG" />
 
                          <AboutBlock title="Contact us">
                               <a href="mailto:contact@flugelhorn.co">

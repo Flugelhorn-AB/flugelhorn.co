@@ -6,6 +6,7 @@ import ProjectHero from '../components/ProjectHero';
 import style from './style/about.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Skeleton from 'react-loading-skeleton';
 
 const About = () => {
      return (
@@ -26,7 +27,11 @@ const About = () => {
                          animate={{ opacity: 1 }}
                     >
                          <Navigation />
-                         <ProjectHero img="/flugel-fam.png" />
+                         {<ProjectHero img="/flugel-fam.png" /> ? (
+                              <ProjectHero img="/flugel-fam.png" />
+                         ) : (
+                              <Skeleton height={'55vh'} />
+                         )}
                          <AboutBlock title="The Flugel Fam">
                               <p>
                                    Flugelhorn{' '}

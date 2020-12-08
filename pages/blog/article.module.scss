@@ -93,6 +93,17 @@
       img {
         width: 100%;
         margin: $mn/4 0;
+        border: 1px solid $gray102;
+      }
+      a {
+        display: inline-block;
+        transition-duration: 100ms;
+        &:hover {
+          transition-duration: 100ms;
+          color: $blue101;
+          transform: rotateZ(-1deg) scale(1.02);
+          text-decoration: underline;
+        }
       }
 
       code {

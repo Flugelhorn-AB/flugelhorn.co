@@ -175,7 +175,7 @@
                position: relative;
                @include mediaTablet {
                     left: unset;
-                    top: -2px;
+                    top: 2.5px;
                     @include logoFont;
                     font-size: 40px;
                }

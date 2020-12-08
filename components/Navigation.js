@@ -13,7 +13,7 @@ const Navigation = () => {
      const [isMobile, setIsMobile] = useState();
      const [offset, setOffset] = useState(0);
      const [menuUnderlay, setMenuUnderlay] = useState(false);
-
+     const [logoBlack, setLogoBlack] = useState(false);
      const { isRouteChanging } = useContext(NavContext);
 
      const setWidth = () => {
@@ -58,8 +58,10 @@ const Navigation = () => {
 
                if (scrollTop >= 100 && !isExpanded) {
                     nav.current.classList.add(style.navNotOnTop);
+                    setLogoBlack(true);
                } else {
                     nav.current.classList.remove(style.navNotOnTop);
+                    setLogoBlack(false);
                }
 
                if (scrollTop > 100) {
@@ -98,10 +100,11 @@ const Navigation = () => {
 
      const handleMenuExpanded = async () => {
           //     Router.router.push({ pathname: "/#work" });
-
+          setLogoBlack(true);
           setMenuExpanded((prev) => {
                return !prev;
           });
+
           navHandler(false);
           //     Router.router.push({ pathname: "/#work" });
      };
@@ -129,6 +132,14 @@ const Navigation = () => {
                     <div className={`${style.logo} `}>
                          <Link href="/">
                               <a style={{ color: menuExpanded ? 'black' : '' }}>
+                                   <img
+                                        className={style.imageLogo}
+                                        src={
+                                             logoBlack
+                                                  ? '/logo/logo-black.svg'
+                                                  : '/logo/logo-white.svg'
+                                        }
+                                   />
                                    Flugelhorn
                               </a>
                          </Link>
@@ -170,6 +181,10 @@ const Navigation = () => {
                               : style.compressed
                     }`}
                >
+                    <a className={style.mobileNavLogo}>
+                         <img src="/logo/logo-black.svg" />
+                         Flugelhorn
+                    </a>
                     <a onClick={menuExpandedFalse} className={style.mobileItem}>
                          Work
                     </a>

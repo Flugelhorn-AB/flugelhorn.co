@@ -220,8 +220,14 @@ const Project = ({ details }) => {
                                                             layout={
                                                                  'responsive'
                                                             }
-                                                            height={700}
-                                                            width={1200}
+                                                            height={
+                                                                 step.image
+                                                                      .height
+                                                            }
+                                                            width={
+                                                                 step.image
+                                                                      .width
+                                                            }
                                                             src={step.image.url}
                                                        />
                                                   </div>

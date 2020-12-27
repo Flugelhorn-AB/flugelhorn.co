@@ -238,7 +238,7 @@ const Project = ({ details }) => {
                                    );
                               })}
                          </AboutBlock>
-                         <Footer />
+                         <Footer menuVisible={true} />
                     </motion.div>
                </AnimatePresence>
           </div>

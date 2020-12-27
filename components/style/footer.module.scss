@@ -56,6 +56,23 @@
           }
      }
 
+     .socialMediaMenu {
+          width: 50%;
+          display: flex;
+          padding-bottom: 10px;
+          flex-direction: column;
+          @include textArticleParagraph;
+          margin: 0;
+          a {
+               padding: 10px 0px 0 20px;
+               color: $gray101;
+
+               &:hover {
+                    color: $gray102;
+               }
+          }
+     }
+
      .details {
           @include mediaDesktop {
                flex-direction: row;

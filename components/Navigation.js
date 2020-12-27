@@ -218,7 +218,7 @@ const Navigation = () => {
                               Contact
                          </a>
                     </Link>
-                    <Footer />
+                    <Footer menuVisible={false} />
                </div>
           </div>
      );

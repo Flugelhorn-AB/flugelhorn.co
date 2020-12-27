@@ -65,7 +65,7 @@ const Contact = () => {
                                    </a>
                               </p>
                          </AboutBlock>
-                         <Footer />
+                         <Footer menuVisible={true} />
                     </motion.div>
                </AnimatePresence>
           </div>

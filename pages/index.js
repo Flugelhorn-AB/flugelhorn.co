@@ -33,7 +33,7 @@ const Index = (props) => {
                          <section id="work">
                               <ProjectGallery projects={props.projects} />
                          </section>
-                         <Footer />
+                         <Footer menuVisible={true} />
                     </motion.div>
                </AnimatePresence>
           </div>

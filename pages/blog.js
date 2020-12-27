@@ -66,7 +66,7 @@ const Blog = ({ articles }) => {
         })}
         </div>
       </div> */}
-                         <Footer />
+                         <Footer menuVisible={true} />
                     </motion.div>
                </AnimatePresence>
           </div>

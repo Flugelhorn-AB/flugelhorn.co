@@ -52,7 +52,7 @@ const About = () => {
                                    <i>
                                         "We immerse future talents and industry
                                         professionals in transformative learning
-                                        experiences to help them to adapt to
+                                        experiences to help them adapt to
                                         rapidly changing times."
                                    </i>
                               </p>
@@ -130,7 +130,7 @@ const About = () => {
                                    />
                               </div>
                          </AboutBlock>
-                         <Footer menuVisible={true} />
+                         <Footer />
                     </motion.div>
                </AnimatePresence>
           </div>

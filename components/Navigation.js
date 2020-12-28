@@ -67,6 +67,7 @@ const Navigation = () => {
                if (scrollTop > 100) {
                     setMenuUnderlay(true);
                     nav.current.classList.add(style.scrollNav);
+                    nav.current.style.border = '1px solid rgba(0,0,0,0.1)';
                } else {
                     setMenuUnderlay(false);
                     nav.current.classList.remove(style.scrollNav);

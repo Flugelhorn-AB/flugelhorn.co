@@ -6,6 +6,7 @@ import ProjectHero from "../components/ProjectHero";
 import style from "./style/about.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -57,6 +58,10 @@ const About = () => {
               everything we do. We analyze the current world situation and
               trends to build things that facilitates the lives of others.
             </p>
+            <br />
+            <Link href="/fam">
+              <a>Read more about the fam!</a>
+            </Link>
           </AboutBlock>
           <AboutBlock title="What we do">
             <p>

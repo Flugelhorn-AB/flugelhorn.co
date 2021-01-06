@@ -1,0 +1,24 @@
+@import "../../base/index.scss";
+
+.person {
+  padding-top: $mn/1.5;
+  .intro {
+    display: flex;
+    flex-direction: column;
+
+    .avatarContainer {
+      width: 100%;
+      img {
+        width: 100%;
+        filter: saturate(0);
+      }
+    }
+    .description {
+      @include textArticleParagraph;
+      padding-top: $mn/3;
+    }
+  }
+  @include mediaTablet {
+    padding-top: $mn;
+  }
+}

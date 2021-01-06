@@ -8,7 +8,7 @@ import Prism from "prismjs";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../../components/Footer";
 import Link from "next/link";
-import CommentSection from "../../components/CommentSection";
+// import CommentSection from "../../components/CommentSection";
 
 var md = require("markdown-it")();
 
@@ -149,7 +149,7 @@ const Article = ({ article }) => {
             ></div>
             {/* <CommentSection article={article.title} /> */}
           </main>
-          <Footer />
+          <Footer menuVisible={true} />
         </motion.div>
       </AnimatePresence>
     </div>

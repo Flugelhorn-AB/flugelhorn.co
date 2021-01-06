@@ -119,7 +119,7 @@ const About = () => {
               />
             </div>
           </AboutBlock>
-          <Footer />
+          <Footer menuVisible={true} />
         </motion.div>
       </AnimatePresence>
     </div>

@@ -131,14 +131,16 @@
         border: 1px solid $gray102;
       }
       a {
-        display: inline-block;
+        text-decoration: underline;
         transition-duration: 100ms;
-        &:hover {
-          transition-duration: 100ms;
-          color: $blue101;
-          transform: rotateZ(-1deg) scale(1.02);
-          text-decoration: underline;
-        }
+        color: $blue101;
+
+        // &:hover {
+        //   transition-duration: 100ms;
+        //   color: $blue101;
+        //   transform: rotateZ(-1deg) scale(1.02);
+        //   text-decoration: underline;
+        // }
       }
 
       code {

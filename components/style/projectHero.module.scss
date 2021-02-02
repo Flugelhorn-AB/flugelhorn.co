@@ -1,61 +1,73 @@
-@import '../../base/index.scss';
+@import "../../base/index.scss";
 
 .projectHero {
-     width: 100%;
-     height: 55vh;
-     display: flex;
-     align-items: flex-end;
-     justify-content: center;
-     position: sticky;
-     top: 0;
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: sticky;
+  top: 0;
 
-     h1 {
-          @include logoFont;
-          font-size: 100px;
-          color: white;
-     }
+  h1 {
+    @include logoFont;
+    font-size: 100px;
+    color: white;
+  }
 
-     @include mediaTablet {
-          height: 65vh;
-     }
-     @include mediaDesktop {
-          height: 65vh;
-     }
+  @include mediaTablet {
+    height: 65vh;
+  }
+  @include mediaDesktop {
+    height: 65vh;
+  }
 }
 .workHero {
-     width: 100%;
-     padding: 0 $mn/3;
-     img {
-          box-sizing: border-box;
-          height: 80%;
-          max-width: 50%;
-          margin-bottom: $mn/3;
-          object-fit: contain;
-     }
-     @include mediaTablet {
-          img {
-               // transform: rotate(90deg);
-               padding: 0 $mn/3;
-               margin-bottom: $mn/2;
-               // animation: swim linear 15000ms infinite;
-          }
-          @keyframes swim {
-               0% {
-                    transform: translateX(-70vw) rotate(90deg);
-               }
-               100% {
-                    transform: translateX(70vw) rotate(90deg);
-               }
-          }
-     }
+  width: 100%;
+  padding: 0 $mn/3;
+
+  .imageContainer {
+    margin-bottom: 2vh;
+
+    img {
+      box-sizing: border-box;
+      //     height: 30%;
+
+      max-width: 50%;
+      margin-bottom: $mn/3;
+      object-fit: contain;
+    }
+  }
+  @include mediaTablet {
+    .imageContainer {
+      margin-bottom: 3vh;
+
+      img {
+        // transform: rotate(90deg);
+        padding: 0 $mn/3;
+        height: 80%;
+        margin-bottom: $mn/2;
+        margin-bottom: 20vh;
+        //  animation: swim linear 15000ms infinite;
+      }
+    }
+    @keyframes swim {
+      0% {
+        transform: translateX(-70vw) rotate(90deg);
+      }
+      100% {
+        transform: translateX(70vw) rotate(90deg);
+      }
+    }
+  }
 }
 
 .aboutHero {
-     img {
-          width: 100%;
-          height: 100%;
-          // margin-bottom: $mn/6;
-          object-fit: cover;
-          position: absolute;
-     }
+  img {
+    width: 100%;
+    height: 100%;
+    // margin-bottom: $mn/6;
+    object-fit: cover;
+    position: absolute;
+  }
 }

@@ -58,7 +58,7 @@ const About = () => {
                               </p>
 
                               <p>
-                                   The schools indoctrinated maxim "Lead the
+                                   The school's indoctrinated maxim "Lead the
                                    Change" is present in everything we do. We
                                    analyze the current world situation and
                                    trends to build things that facilitates the
@@ -113,9 +113,9 @@ const About = () => {
                                    This philosophy is reflected in the work we
                                    do. We take inspiration from everything
                                    between the minimalistic interior design of
-                                   Sweden to the the colorful fabrics woven by
-                                   the Maya people of Guatemala. By utilizing
-                                   the things we see and explore we're able to
+                                   Sweden to the colorful fabrics woven by the
+                                   Maya people of Guatemala. By utilizing the
+                                   things we see and explore we're able to
                                    create creative and tailor-made solutions.
                               </p>
                               <br />

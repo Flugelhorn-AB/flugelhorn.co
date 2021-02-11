@@ -1,184 +1,184 @@
-@import "../../base/index.scss";
+@import '../../base/index.scss';
 
 .project {
-  display: flex;
-  position: relative;
-  //   border: 1px solid black;
-  justify-content: center;
-  background: $white102;
-  // overflow: hidden;
+     display: flex;
+     position: relative;
+     //   border: 1px solid black;
+     justify-content: center;
+     background: $white102;
+     // overflow: hidden;
 
-  &:hover {
-    .imageContainer {
-      .fast {
-        transform: scale(1.25) rotate(-3deg) translateX(20px);
-        transition: transform 1500ms ease-out;
-      }
-      .slow {
-        transform: scale(0.9) rotate(4deg) translateX(-10px);
-        transition: transform 1500ms ease-out;
-      }
-      .normal {
-        transform: scale(1.2) translateX(-10px);
-        transition: transform 2000ms ease-out;
-      }
-    }
-  }
+     &:hover {
+          .imageContainer {
+               .fast {
+                    transform: scale(1.25) rotate(-3deg) translateX(20px);
+                    transition: transform 1500ms ease-out;
+               }
+               .slow {
+                    transform: scale(0.9) rotate(4deg) translateX(-10px);
+                    transition: transform 1500ms ease-out;
+               }
+               .normal {
+                    transform: scale(1.2) translateX(-10px);
+                    transition: transform 2000ms ease-out;
+               }
+          }
+     }
 
-  //   flex-wrap: wrap;
-  .imageContainer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    img,
-    Image {
-      transition: transform 800ms ease-out;
-      width: auto;
-      object-fit: contain;
-      margin: 0 $mn/10;
-      margin-bottom: 3%;
-    }
-    .normal {
-      margin-bottom: $mn/2;
-    }
-    .fast {
-      z-index: 1;
-    }
-  }
-  .info {
-    z-index: 1;
-    padding-top: $mn;
-    text-align: center;
+     //   flex-wrap: wrap;
+     .imageContainer {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          img,
+          Image {
+               transition: transform 800ms ease-out;
+               width: auto;
+               object-fit: contain;
+               margin: 0 $mn/10;
+               margin-bottom: 3%;
+          }
+          .normal {
+               margin-bottom: $mn/2;
+          }
+          .fast {
+               z-index: 1;
+          }
+     }
+     .info {
+          z-index: 1;
+          padding-top: $mn;
+          text-align: center;
 
-    .tags {
-      margin-top: $mn/5;
-    }
+          .tags {
+               margin-top: $mn/5;
+          }
 
-    .intro {
-      margin-top: $mn/4;
-      padding: 0 40px;
-      @include textM;
-      @include mediaTablet {
-        width: $mn * 6;
-        padding: 0 20px;
-      }
-    }
+          .intro {
+               margin-top: $mn/4;
+               padding: 0 40px;
+               @include textM;
+               @include mediaTablet {
+                    width: $mn * 6;
+                    padding: 0 20px;
+               }
+          }
 
-    .link {
-      @include textM;
-      display: block;
-      margin-top: $mn/4;
-      color: #00f;
-      z-index: 1000;
-    }
-  }
+          .link {
+               @include textM;
+               display: block;
+               margin-top: $mn/4;
+               color: #00f;
+               z-index: 1000;
+          }
+     }
 
-  .textDark {
-    .name {
-      color: $black101;
-    }
-    .tags {
-      color: $black101;
-    }
+     .textDark {
+          .name {
+               color: $black101;
+          }
+          .tags {
+               color: $black101;
+          }
 
-    .intro {
-      color: $gray101;
-    }
-  }
-  .textWhite {
-    .name {
-      color: $white101;
-    }
-    .tags {
-      color: $white101;
-    }
+          .intro {
+               color: $gray101;
+          }
+     }
+     .textWhite {
+          .name {
+               color: $white101;
+          }
+          .tags {
+               color: $white101;
+          }
 
-    .intro {
-      color: $gray101;
-    }
-  }
+          .intro {
+               color: $gray101;
+          }
+     }
 }
 
 .projectLarge {
-  grid-row: span 4;
-  grid-column: span 2;
-  .imageContainer {
-    img {
-      margin-right: $mn * 1.5;
-      height: 50%;
-    }
-  }
-  .info {
-    .intro {
-    }
-    .name {
-      @include headlineL;
-    }
-    .tags {
-      @include subHeadlineL;
-    }
-  }
-  @include mediaTablet {
-    grid-row: span 5;
-    width: 100vw;
-    margin-left: -10px;
-    .imageContainer {
-      img {
-        margin-right: $mn * 2.3;
+     grid-row: span 4;
+     grid-column: span 2;
+     .imageContainer {
+          img {
+               margin-right: $mn * 1.5;
+               height: 50%;
+          }
+     }
+     .info {
+          .intro {
+          }
+          .name {
+               @include headlineL;
+          }
+          .tags {
+               @include subHeadlineL;
+          }
+     }
+     @include mediaTablet {
+          grid-row: span 5;
+          width: 100vw;
+          margin-left: -10px;
+          .imageContainer {
+               img {
+                    margin-right: $mn * 2.3;
 
-        height: 55%;
-      }
-    }
-  }
-  @include mediaDesktop {
-    grid-row: span 6;
-  }
+                    height: 55%;
+               }
+          }
+     }
+     @include mediaDesktop {
+          grid-row: span 6;
+     }
 }
 .projectSmal {
-  width: 100%;
+     width: 100%;
 
-  margin: 0px 0px;
+     margin: 0px 0px;
 
-  grid-row: span 3;
-  grid-column: span 2;
-  //   margin-top: 20px;
-  .imageContainer {
-    // img {
-    .slow {
-      height: 40%;
-    }
-    .fast,
-    .normal {
-      height: 45%;
-    }
-    // }
-    @include mediaTablet {
-      .slow {
-        height: 45%;
-      }
-      .fast,
-      .normal {
-        height: 55%;
-      }
-    }
-  }
-  .info {
-    .name {
-      @include headlineM;
-    }
-    .tags {
-      @include subHeadlineL;
-    }
-  }
-  @include mediaTablet {
-    grid-row: span 4;
-    grid-column: span 1;
-  }
-  @include mediaDesktop {
-    grid-row: span 5;
-    grid-column: span 1;
-  }
+     grid-row: span 3;
+     grid-column: span 2;
+     //   margin-top: 20px;
+     .imageContainer {
+          // img {
+          .slow {
+               height: 40%;
+          }
+          .fast,
+          .normal {
+               height: 45%;
+          }
+          // }
+          @include mediaTablet {
+               .slow {
+                    height: 45%;
+               }
+               .fast,
+               .normal {
+                    height: 55%;
+               }
+          }
+     }
+     .info {
+          .name {
+               @include headlineM;
+          }
+          .tags {
+               @include subHeadlineL;
+          }
+     }
+     @include mediaTablet {
+          grid-row: span 4;
+          grid-column: span 1;
+     }
+     @include mediaDesktop {
+          grid-row: span 5;
+          grid-column: span 1;
+     }
 }

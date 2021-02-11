@@ -1,141 +1,143 @@
-@import '../../base/index.scss';
+@import "../../base/index.scss";
 .aboutBlock {
-     background-color: $white101;
-     padding: $mn/2 0;
-     z-index: 10;
-     height: auto;
-     position: relative;
-     .content {
-          display: flex;
-          flex-direction: column;
+  background-color: $white101;
+  padding: $mn/2 0;
+  z-index: 10;
+  height: auto;
+  position: relative;
+  .content {
+    display: flex;
+    flex-direction: column;
 
-          @include content;
+    @include content;
+    position: relative;
+
+    .title,
+    .children,
+    .person {
+      width: 100%;
+    }
+
+    .title {
+      @include headlineL;
+      transition: padding 250ms ease;
+      padding: 10px 0;
+      position: sticky;
+      top: 0px;
+      z-index: 100;
+      background: $white101;
+      bottom: 0px;
+      align-self: flex-start;
+      @include mediaTablet {
+        background: none;
+        top: 12px;
+        padding-top: 0;
+      }
+    }
+    .children {
+      h2 {
+        @include subHeadlineL;
+        padding-top: $mn/6;
+        padding-bottom: $mn/3;
+      }
+
+      p {
+        @include textArticleParagraph;
+        padding-bottom: $mn/6;
+        width: auto;
+      }
+      .quote,
+      i {
+        display: block;
+        font-style: italic;
+        padding-left: $mn;
+      }
+
+      a {
+        display: inline-block;
+        position: relative;
+        transition-duration: 100ms;
+        @include textArticleParagraph;
+
+        &:hover {
+          transition-duration: 100ms;
+          color: $blue101;
+          transform: rotateZ(-1deg) scale(1.02);
+          text-decoration: underline;
+        }
+        p {
+          transition-duration: 100ms;
+          &:hover {
+            transition-duration: 100ms;
+            color: $blue101;
+          }
+        }
+      }
+      div {
+        height: auto;
+
+        img,
+        video {
+          width: 100%;
+          height: auto;
+        }
+
+        a {
+          display: inline-block;
           position: relative;
+          transition-duration: 100ms;
+          @include textArticleParagraph;
 
-          .title,
-          .children {
-               width: 100%;
+          &:hover {
+            transition-duration: 100ms;
+            color: $blue101;
+            transform: rotateZ(-1deg) scale(1.02);
+            text-decoration: underline;
           }
-
-          .title {
-               @include headlineL;
-               transition: padding 250ms ease;
-               padding: 10px 0;
-               position: sticky;
-               top: 0px;
-               z-index: 100;
-               background: $white101;
-               bottom: 0px;
-               align-self: flex-start;
-               @include mediaTablet {
-                    background: none;
-                    top: 12px;
-                    padding-top: 0;
-               }
+          p {
+            transition-duration: 100ms;
+            &:hover {
+              transition-duration: 100ms;
+              color: $blue101;
+            }
           }
-          .children {
-               h2 {
-                    @include subHeadlineL;
-                    padding-top: $mn/6;
-                    padding-bottom: $mn/3;
-               }
+        }
+      }
 
-               p {
-                    @include textArticleParagraph;
-                    padding-bottom: $mn/6;
-                    width: auto;
-               }
-               .quote,
-               i {
-                    display: block;
-                    font-style: italic;
-                    padding-left: $mn;
-               }
+      ul {
+        padding-left: $mn;
+        padding-bottom: $mn/3;
+        li {
+          @include textArticleParagraph;
+        }
+      }
+    }
+  }
+  @include mediaTablet {
+    padding-top: $mn;
+    .content {
+      flex-direction: row;
 
-               a {
-                    display: inline-block;
-                    position: relative;
-                    transition-duration: 100ms;
-                    @include textArticleParagraph;
+      .title,
+      .children,
+      .person {
+        width: 50%;
+      }
 
-                    &:hover {
-                         transition-duration: 100ms;
-                         color: $blue101;
-                         transform: rotateZ(-1deg) scale(1.02);
-                         text-decoration: underline;
-                    }
-                    p {
-                         transition-duration: 100ms;
-                         &:hover {
-                              transition-duration: 100ms;
-                              color: $blue101;
-                         }
-                    }
-               }
-               div {
-                    height: auto;
+      .title {
+      }
 
-                    img,
-                    video {
-                         width: 100%;
-                         height: auto;
-                    }
-
-                    a {
-                         display: inline-block;
-                         position: relative;
-                         transition-duration: 100ms;
-                         @include textArticleParagraph;
-
-                         &:hover {
-                              transition-duration: 100ms;
-                              color: $blue101;
-                              transform: rotateZ(-1deg) scale(1.02);
-                              text-decoration: underline;
-                         }
-                         p {
-                              transition-duration: 100ms;
-                              &:hover {
-                                   transition-duration: 100ms;
-                                   color: $blue101;
-                              }
-                         }
-                    }
-               }
-
-               ul {
-                    padding-left: $mn;
-                    padding-bottom: $mn/3;
-                    li {
-                         @include textArticleParagraph;
-                    }
-               }
-          }
-     }
-     @include mediaTablet {
-          padding-top: $mn;
-          .content {
-               flex-direction: row;
-
-               .title,
-               .children {
-                    width: 50%;
-               }
-
-               .title {
-               }
-
-               .children {
-                    h2 {
-                         padding-top: 7px;
-                    }
-                    p {
-                         text-align: justify;
-                    }
-                    i {
-                         text-align: start;
-                    }
-               }
-          }
-     }
+      .children {
+        h2 {
+          padding-top: 7px;
+        }
+        p {
+          text-align: justify;
+        }
+        i {
+          text-align: start;
+        }
+      }
+    }
+  }
 }

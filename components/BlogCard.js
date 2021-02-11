@@ -2,13 +2,15 @@ import Link from "next/link";
 import { url } from "../utils/fetcher";
 import style from "./style/blogCard.module.scss";
 
-const BlogCard = ({ details }) => {
+const BlogCard = ({ details, isPersonPage }) => {
   let dateString = new Date(details.date).toDateString();
   dateString = `${dateString.substr(3, 7)}, ${dateString.substr(10, 12)}`;
 
+  console.log(details);
+
   return (
     <Link href={`/blog/${details.title.replace(new RegExp(" ", "g"), "%20")}`}>
-      <a className={style.link}>
+      <a className={`${style.link} ${isPersonPage ? style.personPage : ""}`}>
         <div className={style.blogCard}>
           <div className={style.imageContainer}>
             <img src={`${details.cardPicture.url}`} alt="" />

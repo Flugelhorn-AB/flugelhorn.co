@@ -6,6 +6,7 @@ import ProjectHero from '../components/ProjectHero';
 import style from './style/about.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const About = () => {
      return (
